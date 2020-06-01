@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"    
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"    
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"    
+    version="2.0">
+    <tlib-version>1.0</tlib-version>
+    <short-name>cdelUtil</short-name>
+    <uri>http://www.cdeledu.com/taglib/cdelUtil</uri>
+    <tag>
+    	<name>checkLogin</name>
+    	<tag-class>com.chinatet.rad3.tags.CheckLogin</tag-class>
+    	<body-content>empty</body-content>
+    	<attribute>
+    		<name>failUrl</name>
+    		<required>false</required>
+    		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
+    	<attribute>
+    		<name>type</name>
+    		<required>false</required>
+    		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
+    	<attribute>
+    		<name>gotoURL</name>
+    		<required>false</required>
+    		<rtexprvalue>true</rtexprvalue>
+    	</attribute>
+    </tag>
+    <!-- 用与停止页面继续加载的标签 -->
+    <tag>
+    	<name>stopPage</name>
+    	<tag-class>com.chinatet.common.StopPage</tag-class>
+    	<body-content>empty</body-content>
+    </tag>
+    
+    <function>
+    	<name>enc</name>
+    	<function-class>com.chinatet.rad3.tags.URLCoding</function-class>
+    	<function-signature>java.lang.String encoding(java.lang.String, java.lang.String)</function-signature>
+    	<example>${cdelUtil:enc(str, code)}</example>
+    </function>
+    
+    <function>
+    	<name>dec</name>
+    	<function-class>com.chinatet.rad3.tags.URLCoding</function-class>
+    	<function-signature>java.lang.String decoding(java.lang.String, java.lang.String)</function-signature>
+    	<example>${cdelUtil:dec(str, code)}</example>
+    </function>
+</taglib>

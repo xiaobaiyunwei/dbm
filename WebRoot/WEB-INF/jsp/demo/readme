@@ -1,0 +1,2 @@
+demo访问地址：
+http://${ip or site}/op/demo/sqlserver/init.shtm?db=sqlserver

@@ -1,0 +1,1 @@
+1.player目录，rtmp、http协议播放mp4、f4v、flv格式文件播放器；

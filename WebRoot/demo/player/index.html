@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
+	<head>
+		<title>视频测试工具</title>
+		<meta http-equiv="Content-Type" content="text/html; CHARSET=UTF-8" />
+		<style type="text/css" media="screen">
+		html, body { height:100%; background-color: #ffffff;}
+		body { margin:0; padding:0; overflow:hidden; }
+		#flashContent {width:100%;height:100%}
+		</style>
+		<script language="javascript">
+		//获取flash对象
+		function thisMovie()
+		{
+			if(navigator.appName.indexOf("Microsoft") != -1)
+			{
+				return window["VideoTestTools"];
+			}
+			else
+			{
+				return document.embeds['VideoTestToolsem'];
+			}
+		}
+		function testPlay(url)
+		{
+			thisMovie().setUrl(url);
+		}
+		</script>
+	</head>
+	<body>
+		<div id="flashContent">
+			<div style="margin-top:10px;margin-left:10px;float:left;" width="480" height="560">
+			<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="VideoTestTools" align="middle" width="480" height="560">
+				<param name="movie" value="VideoTestTools.swf">
+				<param name="bgcolor" value="#ffffff">
+				<param name="wmode" value="transparent">
+				<param name="allowScriptAccess" value="always">
+				<param name="allowFullScreen" value="true" >
+				<param name="FlashVars" value="">
+				<embed id="VideoTestToolsem" allowscriptaccess="always" wmode="transparent" src="VideoTestTools.swf" allowFullScreen="true" type="application/x-shockwave-flash" flashvars="" width="480" height="560" >
+			</object>		
+			</div>
+			<div style="margin-left:20px;margin-top:10px;float:left;">
+			<a href="javascript:testPlay('http://192.168.190.30/vod/jdsb0001.mp4')">mp4文件http协议测试样例</a></br></br>
+			<a href="javascript:testPlay('rtmp://192.168.190.30/vod/Flash_hdg/jdsb0001.mp4')">mp4文件rtmp协议测试样例</a></br></br>
+			<a href="javascript:testPlay('http://192.168.190.30/vod/sample1_1500kbps.f4v')">f4v文件http协议测试样例</a></br></br>
+			<a href="javascript:testPlay('rtmp://192.168.190.30/vod/sample1_1500kbps.f4v')">f4v文件rtmp协议测试样例</a></br></br>
+			<a href="javascript:testPlay('http://192.168.190.30/vod/sample.flv')">flv文件http协议测试样例</a></br></br>
+			<a href="javascript:testPlay('rtmp://192.168.190.30/vod/sample.flv')">flv文件rtmp协议测试样例</a></br></br>
+			<a href="javascript:testPlay('rtmp://192.168.190.30/live/liveStream')">直播测试样例</a></br>
+			</div>	
+		</div>
+	</body>
+</html>
+

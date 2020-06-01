@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--time 2010-4-4; Copyright 2010 Beijing Begin Licensed under the CDEL License, Version 1.0 (the "License");
+   Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. -->
+<!DOCTYPE sqlMapConfigs [<!ELEMENT sqlMapConfigs (memcached?, sqlMapConfig+)><!ATTLIST sqlMapConfigs default IDREF #REQUIRED>
+<!ELEMENT memcached (rmi?, servers)><!ELEMENT rmi EMPTY><!ATTLIST rmi ip CDATA #REQUIRED><!ATTLIST rmi port CDATA #REQUIRED>
+<!ELEMENT servers (server+)><!ELEMENT server EMPTY><!ATTLIST server addr CDATA #REQUIRED><!ATTLIST server port CDATA #REQUIRED>
+<!ELEMENT sqlMapConfig EMPTY><!ATTLIST sqlMapConfig resource CDATA #REQUIRED><!ATTLIST sqlMapConfig id ID #REQUIRED>]>
+<!-- The root element of an cdel main iBATIS SQL Map configuration file.
+This file provides configuration details for many DataSources Mapper.-->
+
+<sqlMapConfigs default="demo_mysql">
+ 
+<!-- 	<memcached>
+		<servers>
+			<server addr="192.168.190.3" port="11211" />
+		<server addr="59.151.113.110" port="11211" />
+		<server addr="59.151.113.111" port="11211" />		
+		</servers>		
+	</memcached>  -->
+	
+<sqlMapConfig resource="com/conf/mysql/sql-map-demo.xml" id="demo_mysql"/>
+	<!-- <sqlMapConfig resource="com/conf/sqlserver/sql-map-demo.xml" id="demo_sqlserver"/> -->
+	
+</sqlMapConfigs>

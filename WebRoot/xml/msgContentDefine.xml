@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 公共部分 -->
+<!-- userID,messegeType,isValid(可不传，默认0),isRead(可不传，默认0),objectID,fromUserID,fromUserType,msgContentDefineID -->
+
+<!-- 答题部分 -->
+<!-- 接收消息人ID: userID，接收消息人中文名：userName -->
+<!-- 解答者中文名: answerer，解答者ID：answererID，提问者中文名：asker，提问者ID：askerID -->
+<!-- 问题标题：faqTitle，问题ID：faqID，审核者中文名: auditor，审核者ID：auditorID，原评价/评价：oldEav，新评价：newEav -->
+<!-- 评价天数限制: eavDaysLimit，回答时间限制：answerLimit，提问信用等级：askLevelNum，提问信用类型(例如红心)：askLevel -->
+<!-- 免费提问次数: feeAskNum，提问暂停天数：askPauseNum，佣金：commission，总共给的钱数：sumMoney -->
+<!-- 需要扣税的金额限制(800): deductTaxLimit，提问者或解答者中文名：askerOrAnswer，提问者或解答者ID：askerOrAnswerID -->
+
+<!-- 商品部分 -->
+<!-- 评价人：userName，评价人ID：userID，被评价人：toUserName，被评价人ID：toUserID -->
+<!-- 商品名：productTitle，商品ID：productID，评价：eav -->
+<msgContentDefines>
+	<msgContentDefine>
+		<id>0101</id>
+		<param>answerer,answererID,asker,askerID,faqTitle,faqID</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>解答了<a target="_blank" href="_visit_otherspace__askerID_"><font style="color:#c00000">_asker_</font></a>的<a target="_blank" href="_visit_faq__faqID_">“<font style="color:#035dba">_faqTitle_</font>”</a>，请查阅答案并给予评价。<a target="_blank" href="_visit_faq__faqID_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0102</id>
+		<param>auditor,auditorID,answerer,answererID,asker,askerID,oldEav,newEav,faqTitle,faqID</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__auditorID_"><font style="color:#c00000">_answerer_</font></a>对<a target="_blank" href="_visit_otherspace__askerID_"><font style="color:#c00000">_asker_</font></a>给<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>的“_oldEav_”审核后<font style="color:#c00000">_answerer_</font>av_”，请查阅审核后的答案。<a target="_blank" href="_visit_faq__faqID_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0103</id>
+		<param>auditor,auditorID,answerer,answererID,asker,askerID,oldEav,newEav,faqTitle,faqID</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__auditorID_"><font style="color:#c00000">_answerer_</font></a>对<a target="_blank" href="_visit_otherspace__askerID_"><font style="color:#c00000">_asker_</font></a>给<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>的“_oldEav_”审核后的评价为“_newEav_”，请查阅评价调整说明。<a target="_blank" href="_myAccountFaqList_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0105</id>
+		<param>asker,askerID,faqTitle,faqID</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__askerID_"><font style="color:#c00000">_asker_</font></a>对<a target="_blank" href="_visit_faq__faqID_">“<font style="color:#035dba">_faqTitle_</font>”</a>审核结果的投诉，管理员给出了仲裁结果，请查阅详情！<a target="_blank" href="_visit_faq__faqID_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0106</id>
+		<param>answerer,answererID,asker,askerID,faqTitle,faqID</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>对<a target="_blank" href="_visit_otherspace__askerID_"><font style="color:#c00000">_asker_</font></a>的<a target="_blank" href="_visit_faq__faqID_">“<font style="color:#035dba">_faqTitle_</font>”</a>审核结果投诉后，管理员给出了仲裁结果，请查阅详情！<a target="_blank" href="_visit_faq__faqID_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0107</id>
+		<param>thirdParty,thirdPartyID,asker,askerID,faqTitle,faqID</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__thirdPartyID_">_thirdParty_</a>对<a target="_blank" href="_visit_otherspace__askerID_"><font style="color:#c00000">_asker_</font></a>的<a target="_blank" href="_visit_faq__faqID_">“<font style="color:#035dba">_faqTitle_</font>”</a>提问纠错后有了新的答案，请查阅详请！<a target="_blank" href="_visit_faq__faqID_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0108</id>
+		<param>answerer,answererID,asker,askerID,faqTitle,faqID,oldEav</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>对<a target="_blank" href="_visit_otherspace__askerID_"><font style="color:#c00000">_asker_</font></a>的<a target="_blank" href="_visit_faq__faqID_">“<font style="color:#035dba">_faqTitle_</font>”</a>提问评价为“_oldEav_”。<a target="_blank" href="_visit_faq__faqID_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0109</id>
+		<param>asker,askerID,faqTitle,faqID,eavDaysLimit,oldEav</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__askerID_"><font style="color:#c00000">_asker_</font></a>未对<a target="_blank" href="_visit_faq__faqID_">“<font style="color:#035dba">_faqTitle_</font>”</a>答复给予评价超过_eavDaysLimit_天，系统自动评为“_oldEav_”！]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0111</id>
+		<param>asker,askerID,askLevelNum,askLevel</param>
+		<text><![CDATA[祝贺<a target="_blank" href="_visit_otherspace__askerID_"><font style="color:#c00000">_asker_</font></a>！<a target="_blank" href="_visit_otherspace__askerID_"><font style="color:#c00000">_asker_</font></a>的提问信用等级升级为_askLevelNum_颗“_askLevel_”！]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0113</id>
+		<param>userName,userID,askPauseNum</param>
+		<text><![CDATA[非常抱歉，因<a target="_blank" href="_visit_otherspace__userID_">_userName_</a>违反平台管理制度，<a target="_blank" href="_visit_otherspace__userID_">_userName_</a>的提问权限被“暂停_askPauseNum_天”，请查阅详情。]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0114</id>
+		<param>userName,userID</param>
+		<text><![CDATA[非常抱歉，因<a target="_blank" href="_visit_otherspace__userID_">_userName_</a>违反平台管理制度，您的帐号被“冻结”，请查阅详情。]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0115</id>
+		<param>asker,askerID,answerer,answererID,oldEav,faqTitle,faqID,commission</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__askerID_"><font style="color:#c00000">_asker_</font></a>给<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>的评价为“_oldEav_”，<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>获得答题佣金_commission_元。<a target="_blank" href="_myAccountFaqList_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0116</id>
+		<param>asker,askerID,answerer,answererID,oldEav,faqTitle,faqID</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__askerID_"><font style="color:#c00000">_asker_</font></a>给<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>的评价为“_oldEav_”，审核老师正在核实，请查阅详情。<a target="_blank" href="_visit_faq__faqID_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0117</id>
+		<param>auditor,auditorID,asker,askerID,answerer,answererID,oldEav,newEav,faqTitle,faqID,commission</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__auditorID_"><font style="color:#c00000">_answerer_</font></a>对<a target="_blank" href="_visit_otherspace__askerID_"><font style="color:#c00000">_asker_</font></a>给<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>的“_oldEav_”审核后的评价为“_newEav_”，<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>获得答题佣金_commission_元。<a target="_blank" href="_myAccountFaqList_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0118</id>
+		<param>auditor,auditorID,asker,askerID,answerer,answererID,oldEav,newEav,faqTitle,faqID,commission</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__auditorID_"><font style="color:#c00000">_answerer_</font></a>对<a target="_blank" href="_visit_otherspace__askerID_"><font style="color:#c00000">_asker_</font></a>给<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>的“_oldEav_”审核后的评价为“_newEav_”，<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>被处以_commission_元的答题罚金。<a target="_blank" href="_myAccountFaqList_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0119</id>
+		<param>auditor,auditorID,asker,askerID,answerer,answererID,oldEav,faqTitle,faqID</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__auditorID_"><font style="color:#c00000">_answerer_</font></a>对<a target="_blank" href="_visit_otherspace__askerID_"><font style="color:#c00000">_asker_</font></a>给<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>的“_oldEav_”审核后的评价为“取消问题”，此“_oldEav_”无效。<a target="_blank" href="_visit_faq__faqID_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0120</id>
+		<param>answerer,answererID,faqTitle,faqID</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>对<a target="_blank" href="_visit_faq__faqID_">“<font style="color:#035dba">_faqTitle_</font>”</a>审核结果的投诉，管理员给出了仲裁结果，请查阅详情！<a target="_blank" href="_visit_faq__faqID_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0121</id>
+		<param>answerer,answererID,faqTitle,faqID,oldEav,sumMoney</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>对<a target="_blank" href="_visit_faq__faqID_">“<font style="color:#035dba">_faqTitle_</font>”</a>审核结果投诉后，仲裁结果为“_oldEav_”，<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>已收到此题佣金并返还等额罚金，共计_sumMoney_元。请查阅详情！<a target="_blank" href="_myAccountFaqList_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0122</id>
+		<param>asker,askerID,answerer,answererID,faqTitle,faqID</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__askerID_"><font style="color:#c00000">_asker_</font></a>对<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>回答的<a target="_blank" href="_visit_faq__faqID_">“<font style="color:#035dba">_faqTitle_</font>”</a>审核结果投诉后，管理员给出了仲裁结果，请查阅详情！<a target="_blank" href="_visit_faq__faqID_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0123</id>
+		<param>asker,askerID,answerer,answererID,faqTitle,faqID,oldEav,sumMoney</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__askerID_"><font style="color:#c00000">_asker_</font></a>对<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>回答的<a target="_blank" href="_visit_faq__faqID_">“<font style="color:#035dba">_faqTitle_</font>”</a>审核结果投诉后，仲裁结果为“_oldEav_”，<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>被退还此题佣金并补交等额罚金，共计_sumMoney_元。请查阅详情！<a target="_blank" href="_myAccountFaqList_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0124</id>
+		<param>asker,askerID,answerer,answererID,faqTitle,faqID,oldEav,sumMoney</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__askerID_"><font style="color:#c00000">_asker_</font></a>对<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>回答的<a target="_blank" href="_visit_faq__faqID_">“<font style="color:#035dba">_faqTitle_</font>”</a>审核结果投诉后，仲裁结果为“_oldEav_”，<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>已收到此题佣金并返还等额罚金，共计_sumMoney_元。请查阅详情！<a target="_blank" href="_myAccountFaqList_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0125</id>
+		<param>thirdParty,thirdPartyID,answerer,answererID,faqTitle,faqID</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__thirdPartyID_">_thirdParty_</a>对<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>的<a target="_blank" href="_visit_faq__faqID_">“<font style="color:#035dba">_faqTitle_</font>”</a>回答纠错后有了新的答案，请查阅详请！<a target="_blank" href="_visit_faq__faqID_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0126</id>
+		<param>answerer,answererID,askLevelNum,askLevel</param>
+		<text><![CDATA[祝贺<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>！<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>的解答信用等级升级为_askLevelNum_颗“_askLevel_”，继续加油！]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0127</id>
+		<param>userName,userID,deductTaxLimit</param>
+		<text><![CDATA[本月<a target="_blank" href="_visit_otherspace__userID_">_userName_</a>的累积收入达到_deductTaxLimit_元，按规定将对本月超过_deductTaxLimit_元的每笔收入代扣税款。<a target="_blank" href="_myAccountFaqList_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0128</id>
+		<param>userName,userID,askerOrAnswer,askerOrAnswerID,faqTitle,faqID</param>
+		<text><![CDATA[非常抱歉，<a target="_blank" href="_visit_otherspace__userID_">_userName_</a>对<a target="_blank" href="_visit_otherspace__askerOrAnswerID_">_askerOrAnswer_</a>的评价已被管理员编辑修改，请查阅详情！]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0129</id>
+		<param>askerOrAnswer,askerOrAnswerID,faqTitle,faqID</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__askerOrAnswerID_">_askerOrAnswer_</a>对<a target="_blank" href="_visit_faq__faqID_">“<font style="color:#035dba">_faqTitle_</font>”</a>审核结果投诉后，仲裁结果为“审核正确”，请查阅详情！<a target="_blank" href="_visit_faq__faqID_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0130</id>
+		<param>auditor,auditorID,askerOrAnswer,askerOrAnswerID,faqTitle,faqID,sumMoney</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__askerOrAnswerID_">_askerOrAnswer_</a>对 <a target="_blank" href="_visit_faq__faqID_">“<font style="color:#035dba">_faqTitle_</font>”</a>审核结果投诉后，仲裁结果为“审核错误”，<a target="_blank" href="_visit_otherspace__auditorID_"><font style="color:#c00000">_answerer_</font></a>被退还审核佣金并补交等额罚金，共_sumMoney_元，请查阅详情！<a target="_blank" href="_myAccountFaqList_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0131</id>
+		<param>auditor,auditorID,asker,askerID,faqTitle,faqID</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__auditorID_"><font style="color:#c00000">_answerer_</font></a>已将<a target="_blank" href="_visit_otherspace__askerID_"><font style="color:#c00000">_asker_</font></a>提出的<a target="_blank" href="_visit_faq__faqID_">“<font style="color:#035dba">_faqTitle_</font>”</a>取消！<a target="_blank" href="_visit_faq__faqID_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0132</id>
+		<param>auditor,auditorID,asker,askerID,faqTitle,faqID</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__auditorID_"><font style="color:#c00000">_answerer_</font></a>修改了<a target="_blank" href="_visit_otherspace__askerID_"><font style="color:#c00000">_asker_</font></a>提出的<a target="_blank" href="_visit_faq__faqID_">“<font style="color:#035dba">_faqTitle_</font>”</a>所属分类！<a target="_blank" href="_visit_faq__faqID_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0133</id>
+		<param>answerer,answererID,faqTitle,faqID,eavDaysLimit</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>未对<a target="_blank" href="_visit_faq__faqID_">“<font style="color:#035dba">_faqTitle_</font>”</a>提问给予评价超过_eavDaysLimit_天，系统自动评为“好评”！]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0134</id>
+		<param>auditor,auditorID,answerer,answererID,faqTitle,faqID</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__auditorID_"><font style="color:#c00000">_answerer_</font></a>已将<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>回答的<a target="_blank" href="_visit_faq__faqID_">“<font style="color:#035dba">_faqTitle_</font>”</a>取消！<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000"><font style="color:#c00000">_answerer_</font></font></a>被退还此题佣金。<a target="_blank" href="_myAccountFaqList_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0135</id>
+		<param>auditor,auditorID,answerer,answererID,faqTitle,faqID</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__auditorID_"><font style="color:#c00000">_answerer_</font></a>修改了<a target="_blank" href="_visit_otherspace__answererID_"><font style="color:#c00000">_answerer_</font></a>回答的<a target="_blank" href="_visit_faq__faqID_">“<font style="color:#035dba">_faqTitle_</font>”</a>所属分类！<a target="_blank" href="_visit_faq__faqID_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0136</id>
+		<param>thirdParty,thirdPartyID,faqTitle,faqID</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__thirdPartyID_">_thirdParty_</a>对<a target="_blank" href="_visit_faq__faqID_">“<font style="color:#035dba">_faqTitle_</font>”</a>的回答纠错投诉已被处理，请查阅详情。<a target="_blank" href="_visit_faq__faqID_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0137</id>
+		<param>userName,userID</param>
+		<text><![CDATA[恭喜<a target="_blank" href="_visit_otherspace__userID_"><font style="color:#c00000">_userName_</font></a>，实名认证成功，想了解更多平台功能与规则，请访问<a target="_blank" href="_visit_help_">“问答帮助”</a>！<a target="_blank" href="_visit_help_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0150</id>
+		<param>asker,askerID,faqTitle,faqID,commission</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__askerID_"><font style="color:#c00000">_asker_</font></a>提出了佣金为_commission_元的问题：<a target="_blank" href="_visit_faq__faqID_"><font style="color:#035dba">_faqTitle_</font></a>。<a target="_blank" href="_visit_faq__faqID_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0201</id>
+		<param>userName,userID,toUserName,toUserID,productTitle,productID,eav</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__userID_"><font style="color:#c00000">_userName_</font></a>对 <a target="_blank" href="_visit_otherspace__toUserID_"><font style="color:#c00000">_toUserName_</font></a>的<a target="_blank" href="_visitWareID__productID_"><font style="color:#035dba">_productTitle_</font></a>进行了评价，评价为“_eav_”，请查阅。<a target="_blank" href="_visitWareID__productID_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0202</id>
+		<param>userName,userID,toUserName,toUserID,productTitle,productID</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__userID_"><font style="color:#c00000">_userName_</font></a>对 <a target="_blank" href="_visit_otherspace__toUserID_"><font style="color:#c00000">_toUserName_</font></a>的<a target="_blank" href="_visitWareID__productID_"><font style="color:#035dba">_productTitle_</font></a>的评价进行了回复，请查阅。<a target="_blank" href="_visitWareID__productID_">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0401</id>
+		<param>title,userName,userID,toUserName,wareName,fromUserID,content,objectID</param>
+		<text><![CDATA[<a target="_blank" href="_visit_otherspace__userID_">_userName_</a>在<a target="_blank" href="_visitWareID__objectID_">_wareName_</a>中给<a target="_blank" href="_visit_otherspace__toUserID_">_toUserName_</a>留言了！<a href="javascript:view('_title_','_content_')">[查看]</a>]]></text>
+	</msgContentDefine>
+	<msgContentDefine>
+		<id>0501</id>
+		<param>content</param>
+		<text><![CDATA[_content_]]></text>
+	</msgContentDefine>
+</msgContentDefines>

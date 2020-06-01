@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project name="ADVC-modules" default="_dev.all" basedir=".">
+
+<!-- ========== project dir ========== -->
+    <!-- #### You can modify here #### -->
+<property name="workspaces.dir" value="D:\Workspaces\"/>
+<property name="module" value="fee"/> 
+<property name="package" value="com/chinatet/${module}"/>
+    <!-- #### End. #### -->
+<!-- ========== project information ========== -->
+<property name="project" value="${workspaces.dir}/chinatet_pub"/>
+<!-- ========== tomcat config ========== -->
+<property name="user" value="root"/>
+<property name="passwd" value="cdeltech"/>
+<property name="host" value="192.168.190.3"/>
+<property name="tomcatDir" value="/usr/local/g12a/advc-qz-tomcat"/>
+<property name="baseDir" value="${tomcatDir}/webapps/pub"/>
+<property name="tomcat" value="${user}:${passwd}@${host}:${baseDir}"/>
+<!-- ========== db config for source generating ========== -->
+<property name="db.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+<property name="db.url" value="jdbc:sqlserver://192.168.181.6:1433;DatabaseName=chinatet_op"/>
+<property name="db.user" value="sa"/>
+<property name="db.passwd" value="cailiqiang"/>
+    <!-- #### You can modify here #### -->
+<property name="project.package" value="com.chinatet.${module}"/>
+<property name="db.table" value="OP_FEE_BALANCEBILL"/>
+<property name="src.domain" value="BalanceBill"/>
+    <!-- #### End. #### -->
+
+<property name="project.path" value="${project}/src/${package}"/>
+<property name="domain.package" value="${project.package}.domain"/>
+<property name="domain.path" value="${project.path}/domain"/>
+<property name="sqlMap.path" value="${project.path}/sql"/>
+
+<property name="build.dir" value="${project}/.webroot"/>
+
+<target name="_dev.all" depends="message, compile.classes, copy.jsp.src, copy.xml.src, deploy.all, clean"/>
+<target name="_dev.all.remain" depends="message, compile.classes, copy.jsp.src, copy.xml.src, deploy.all"/>
+<target name="_dev.classes" depends="message, compile.classes, deploy.classes, clean"/>
+<target name="_dev.jsp" depends="message, copy.jsp.src, deploy.jsp, clean"/>
+<target name="_dev.xml" depends="message, copy.xml.src, deploy.xml, clean"/>
+<target name="_dev.restart" depends="deploy.restart.tomcat"/>
+<target name="_clean" depends="message, clean"/>
+<target name="_create.jar" depends="message, create.jar, clean"/>
+<target name="_gen.project" depends="message, project.gen, domain.gen, sqlMap.gen"/>
+<target name="_gen.action" depends="action.gen"/>
+<target name="_gen.config" depends="config.gen"/>
+<target name="_gen.dao" depends="dao.gen"/>
+<target name="_gen.domain" depends="domain.gen"/>
+<target name="_gen.facade" depends="facade.gen"/>
+<target name="_gen.jsp" depends="jsp.gen"/>
+<target name="_gen.sql" depends="sqlMap.gen"/>
+	
+	
+<target name="_dev.classes_nosql" depends="message, compile.classes.nosql, deploy.classes, clean"/>	
+	<target name="compile.classes.nosql" >
+			    <mkdir dir="${build.dir}/WEB-INF/classes"/>
+			    <javac srcdir="${project}/src/${package}" debug="true"
+			           destdir="${build.dir}/WEB-INF/classes" includes="**/*.java" encoding="UTF-8">
+			        <classpath>
+			            <fileset dir="${project}/lib">
+			                <include name="**/*.jar"/>
+			            </fileset>
+			            <pathelement path="${project}/webapp/WEB-INF/classes"/>
+			        </classpath>
+			    </javac>
+	   </target>
+<target name="_dev.xml.nosql" depends="copy.xml.src.nosql, deploy.xml, clean"/>
+<target name="copy.xml.src.nosql" >
+	    <copy todir="${build.dir}/WEB-INF/config" overwrite="true">
+	        <fileset dir="${project}/src/${package}/config">
+	            <include name="**/*.xml"/>
+	        </fileset>
+	    </copy> 
+	</target>  
+
+<target name="message" >
+    <echo message="*************** CDEL PLAT QZ Deploy ***************"/>  
+    <mkdir dir="${build.dir}"/>     
+    <mkdir dir="${build.dir}/WEB-INF"/>  
+</target>
+
+<!-- compile classes to bin -->
+	<target name="compile.classes" >
+	    <mkdir dir="${build.dir}/WEB-INF/classes"/>
+	    <javac srcdir="${project}/src/${package}" debug="true"
+	           destdir="${build.dir}/WEB-INF/classes" includes="**/*.java" encoding="UTF-8">
+	        <classpath>
+	            <fileset dir="${project}/lib">
+	                <include name="**/*.jar"/>
+	            </fileset>
+	            <pathelement path="${project}/bin"/>
+	        </classpath>
+	    </javac>
+	    <copy todir="${build.dir}/WEB-INF/classes/${package}/sql" overwrite="true">
+	        <fileset dir="${project}/src/${package}/sql">
+	            <include name="**/*.xml"/>
+	        </fileset>
+	    </copy>
+	</target>
+	
+        
+	<!-- copy jsp from src to bin -->      
+	<target name="copy.jsp.src">
+	    <copy todir="${build.dir}/WEB-INF/jsp/${module}" overwrite="true">
+	        <fileset dir="${project}/src/${package}/jsp" />
+	    </copy> 
+	</target>
+
+	<!-- copy config.xml from src to bin -->      
+	<target name="copy.xml.src" >
+	    <copy todir="${build.dir}/WEB-INF/config" overwrite="true">
+	        <fileset dir="${project}/src/${package}/config">
+	            <include name="**/*.xml"/>
+	        </fileset>
+	    </copy> 
+	    <copy todir="${build.dir}/WEB-INF/classes/${package}/sql" overwrite="true">
+	        <fileset dir="${project}/src/${package}/sql">
+	            <include name="**/*.xml"/>
+	        </fileset>
+	    </copy> 
+	</target>  
+
+	<!-- S copy files to target for deployment -->      
+	<target name="deploy.jsp">
+	    <sshexec host="${host}" username="${user}" password="${passwd}" trust="true" 
+	        command="mkdir -p ${baseDir}/WEB-INF; mkdir -p ${baseDir}/WEB-INF/jsp; mkdir -p ${baseDir}/WEB-INF/jsp/${module}"/>
+	    <scp todir="${tomcat}/WEB-INF/jsp/${module}" trust="true">
+	        <fileset dir="${build.dir}/WEB-INF/jsp/${module}">
+	            <include name="**/*.jsp" />
+	        </fileset>
+	    </scp>
+	</target> 
+	 
+	<target name="deploy.xml" >
+	    <sshexec host="${host}" username="${user}" password="${passwd}" trust="true" 
+	        command="mkdir -p ${baseDir}/WEB-INF"/>
+	    <scp todir="${tomcat}/WEB-INF" trust="true">
+	        <fileset dir="${build.dir}/WEB-INF" />
+	    </scp>
+	</target> 
+
+	<target name="deploy.classes" >
+	    <sshexec host="${host}" username="${user}" password="${passwd}" trust="true" 
+	        command="mkdir -p ${baseDir}/WEB-INF; mkdir -p ${baseDir}/WEB-INF/classes; mkdir -p ${baseDir}/WEB-INF/classes/${package}"/>
+	    <scp todir="${tomcat}/WEB-INF/classes/${package}" trust="true">
+	        <fileset dir="${build.dir}/WEB-INF/classes/${package}" />
+	    </scp>
+	</target>
+
+<target name="deploy.all" depends="deploy.jsp, deploy.xml, deploy.classes">
+    <!--
+    <scp todir="${tomcat}/WEB-INF" trust="true">
+        <fileset dir="${build.dir}/WEB-INF" />
+    </scp>
+    -->
+</target>
+
+<target name="deploy.restart.tomcat" >
+    <sshexec host="${host}" username="${user}" password="${passwd}" trust="true" 
+        command="${tomcatDir}/bin/restart.sh"/>
+</target>
+<!-- E copy files to target for deployment -->  
+    
+<!-- delete build.dir  -->
+<target name="clean">
+    <delete dir="${build.dir}"/>
+</target>
+
+<!-- generates the domain class -->
+<target name="project.gen" >
+    <java classname="com.chnedu.plat.rad.util.genajax.TemplateProjectGen">
+        <arg value="${db.driver}"/>
+        <arg value="${db.url}"/>
+        <arg value="${db.user}"/>
+        <arg value="${db.passwd}"/>
+        <arg value="${db.table}"/>
+        <arg value="${src.domain}"/>
+        <arg value="${project.package}"/>
+        <arg value="${project.path}"/>
+        <classpath>
+            <fileset dir="${project}/lib">
+                <include name="**/*.jar"/>
+            </fileset>
+        </classpath>
+    </java>
+</target>
+
+<target name="action.gen" >
+    <java classname="com.chnedu.plat.rad.util.genajax.TemplateProjectGen">
+        <arg value="${db.driver}"/>
+        <arg value="${db.url}"/>
+        <arg value="${db.user}"/>
+        <arg value="${db.passwd}"/>
+        <arg value="${db.table}"/>
+        <arg value="${src.domain}"/>
+        <arg value="${project.package}"/>
+        <arg value="${project.path}"/>
+        <arg value="1"/>
+        <classpath>
+            <fileset dir="${project}/lib">
+                <include name="**/*.jar"/>
+            </fileset>
+        </classpath>
+    </java>
+</target>
+
+<target name="config.gen" >
+    <java classname="com.chnedu.plat.rad.util.genajax.TemplateProjectGen">
+        <arg value="${db.driver}"/>
+        <arg value="${db.url}"/>
+        <arg value="${db.user}"/>
+        <arg value="${db.passwd}"/>
+        <arg value="${db.table}"/>
+        <arg value="${src.domain}"/>
+        <arg value="${project.package}"/>
+        <arg value="${project.path}"/>
+        <arg value="2"/>
+        <classpath>
+            <fileset dir="${project}/lib">
+                <include name="**/*.jar"/>
+            </fileset>
+        </classpath>
+    </java>
+</target>
+
+<target name="dao.gen" >
+    <java classname="com.chnedu.plat.rad.util.genajax.TemplateProjectGen">
+        <arg value="${db.driver}"/>
+        <arg value="${db.url}"/>
+        <arg value="${db.user}"/>
+        <arg value="${db.passwd}"/>
+        <arg value="${db.table}"/>
+        <arg value="${src.domain}"/>
+        <arg value="${project.package}"/>
+        <arg value="${project.path}"/>
+        <arg value="3"/>
+        <classpath>
+            <fileset dir="${project}/lib">
+                <include name="**/*.jar"/>
+            </fileset>
+        </classpath>
+    </java>
+</target>
+
+<target name="facade.gen" >
+    <java classname="com.chnedu.plat.rad.util.genajax.TemplateProjectGen">
+        <arg value="${db.driver}"/>
+        <arg value="${db.url}"/>
+        <arg value="${db.user}"/>
+        <arg value="${db.passwd}"/>
+        <arg value="${db.table}"/>
+        <arg value="${src.domain}"/>
+        <arg value="${project.package}"/>
+        <arg value="${project.path}"/>
+        <arg value="4"/>
+        <classpath>
+            <fileset dir="${project}/lib">
+                <include name="**/*.jar"/>
+            </fileset>
+        </classpath>
+    </java>
+</target>
+
+<target name="jsp.gen" >
+    <java classname="com.chnedu.plat.rad.util.genajax.TemplateProjectGen">
+        <arg value="${db.driver}"/>
+        <arg value="${db.url}"/>
+        <arg value="${db.user}"/>
+        <arg value="${db.passwd}"/>
+        <arg value="${db.table}"/>
+        <arg value="${src.domain}"/>
+        <arg value="${project.package}"/>
+        <arg value="${project.path}"/>
+        <arg value="5"/>
+        <classpath>
+            <fileset dir="${project}/lib">
+                <include name="**/*.jar"/>
+            </fileset>
+        </classpath>
+    </java>
+</target>
+    
+<!-- generates the domain class -->
+<target name="domain.gen" >
+    <java classname="com.chnedu.plat.rad.util.genajax.DomainGen">
+        <arg value="${db.driver}"/>
+        <arg value="${db.url}"/>
+        <arg value="${db.user}"/>
+        <arg value="${db.passwd}"/>
+        <arg value="${db.table}"/>
+        <arg value="${src.domain}"/>
+        <arg value="${domain.package}"/>
+        <arg value="${domain.path}"/>
+        <classpath>
+            <fileset dir="${project}/lib">
+                <include name="**/*.jar"/>
+            </fileset>
+        </classpath>
+    </java>
+</target>
+
+<!-- generates the sqlMap xml -->
+<target name="sqlMap.gen" >
+    <java classname="com.chnedu.plat.rad.util.genajax.SqlMapGen">
+        <arg value="${db.driver}"/>
+        <arg value="${db.url}"/>
+        <arg value="${db.user}"/>
+        <arg value="${db.passwd}"/>
+        <arg value="${db.table}"/>
+        <arg value="${src.domain}"/>
+        <arg value="${domain.package}"/>
+        <arg value="${sqlMap.path}"/>
+        <classpath>
+            <fileset dir="${project}/lib">
+                <include name="**/*.jar"/>
+            </fileset>
+        </classpath>
+    </java>
+</target>
+
+<!-- create jar file -->
+<target name="create.jar" >
+    <mkdir dir="${build.dir}/WEB-INF/classes"/>
+    <javac srcdir="${project}/src/${package}" 
+           destdir="${build.dir}/WEB-INF/classes" includes="**/*.java" >
+        <classpath>
+            <fileset dir="${project}/lib">
+                <include name="**/*.jar"/>
+            </fileset>
+        </classpath>
+    </javac>
+    <jar jarfile="${project}/lib/chnedu_${module}.jar" basedir="${build.dir}/WEB-INF/classes"/>
+</target>
+</project>

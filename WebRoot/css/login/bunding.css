@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* CSS Document */
+.clearfix:after{content:".";display:block;height:0;clear: both;visibility:hidden;}
+.clearfix{*zoom:1;}
+.msf{font-family:\5FAE\8F6F\96C5\9ED1,\9ED1\4F53;}
+.rela{position:relative;}
+.abso{position:absolute;}
+.fl{float:left;display:inline;}
+.fr{float:right;display:inline;}
+.tl{text-align:left;}
+.tc{text-align:center;}
+.tr{text-align:right;}
+.wrap{width:950px; margin:0 auto;}
+.subhead{height:38px; line-height:38px; float:left; margin:12px 0 0 19px; padding-left:17px; border-left:1px solid #e5e5e5; color:#666; font-size:24px;}
+.subhead a:link,.subhead a:visited{color:#666;text-decoration:none;}
+.content{background:url(../../images/head/head_12.jpg) repeat-x left top; text-align:left;}
+/*404*/
+.new404{width:950px;height:421px; background:url(../../images/index/new404Bg.jpg) no-repeat #eff9ff; margin:0 auto;}
+.pt20{padding-top:20px;}
+.new404-con{padding:84px 0 0 360px; color:#626262;}
+.new404-con h2{line-height:46px; font-size:36px; font-weight:normal;}
+.new404-con h2 span{display:block; line-height:30px; padding-left:364px; font-size:26px; font-family:Arial, Helvetica, sans-serif;color:#7aa2c2;}
+.new404-explain{padding:14px 0 32px;line-height:36px; font-size:18px;}
+.new404-panel{line-height:30px; font-size:14px;}
+.new404-panel a:link,.new404-panel a:visited{color:#f60; text-decoration:none;}
+
+/*绑定账号*/
+.bindingBg{height:573px;background:url(../../images/index/bindingBg-x.gif) repeat-x #f4f4f4; padding:26px 0;}
+.binding-explain{padding:5px 15px 5px 19px; line-height:24px; background:#fff7e0; border:1px solid #fbdbbc; color:#333; margin-bottom:24px;}
+.binding{background:#fff;}
+.binding-tab{height:51px; background:url(../../images/index/binding-tabBg-x.gif) repeat-x;}
+.binding-tab li{height:49px;padding:0 26px;line-height:47px; padding-top:2px;float:left; cursor:pointer; font-size:18px;}
+.binding-tab li.cur{background:#fff;padding-top:0; border-top:2px solid #0180c5; color:#06c; cursor:default;}
+.binding-tab-con{padding:17px 0 29px; display:none;height:392px;}
+.binding-account{padding:33px 0 0 318px;}
+.binding-account li{height:auto !important;height:60px; min-height:60px; color:#aaa; vertical-align:top;}
+.binding-account span li{height:auto !important;height:60px; color:#aaa; vertical-align:top;}
+.binding-account li a:link,.binding-account li a:visited{color:#0779da; text-decoration:none;}
+.form-tex312,.form-tex207{width:288px;height:34px; padding:0 12px;line-height:34px;border:1px solid #d0dce8;color:#aaa; font-size:14px; vertical-align:middle;}
+.form-tex207{width:183px;}
+.binding-code{margin-left:14px; vertical-align:middle;}
+.binding-ret-pass{line-height:24px; padding:0 0 16px 212px;}
+.binding-btn{width:209px;height:40px; background:url(../../images/index/binding-btnBg.gif) repeat-x; color:#fff; font-size:18px;font-family:\5FAE\8F6F\96C5\9ED1,\9ED1\4F53; border:0 none; cursor:pointer; vertical-align:middle;}
+.form-tex209{width:187px;height:28px; padding:0 10px;line-height:28px;border:1px solid #d0dce8;color:#aaa;vertical-align:middle;}
+.w474{width:474px;}
+.binding-new{padding-top:15px;}
+.binding-new li{height:auto !important;height:54px; min-height:54px;vertical-align:top;}
+.binding-new li label{width:87px; line-height:30px; padding-right:15px;display:inline-block; text-align:right; font-size:14px; color:#333;}
+.form-hint,.form-hint em{height:24px;color:#ec0101;background:url(../../images/index/form-hint.gif) no-repeat; padding-left:15px; margin-left:3px; display:inline-block;}
+.form-hint em{width:160px; padding:0 10px 0 0; margin:0;line-height:24px;background-position:right top;font-style:normal;}
+.form-explain{padding:6px 0 13px 104px; line-height:20px; color:#666;}
+.sms-btn,.sms-i{width:120px;height:24px; line-height:24px;background:url(../../images/index/sms-btn.png) no-repeat;text-align:center; vertical-align:middle;border:0 none; color:#fff; cursor:pointer; margin-left:5px;margin-right: 45px;}
+.sms-i{background-position:left -25px; display:inline-block;font-style:normal;cursor:default;}
+.form-bor{border-right:1px solid #e5e5e5;}
+.pt30{padding-top:30px;}
+.pb30{padding-bottom:30px;}
+.form-clause a:link,.form-clause a:visited{color:#0779da; text-decoration:none;}
+.form-clause input{ vertical-align:middle; margin:-3px 3px 0 0;}
+
+/*登录弹窗*/
+.log-cmp,.certification-cmp,.register-cmp{width:498px;left:50%;text-align:left;}
+/* .log-cmp,.certification-cmp,.register-cmp{ border:4px solid #7f7f7f; background:#fff; position:absolute;left:50%; margin-left:-252px;top:100px; text-align:left;} */
+/* .cmp-close{width:23px;height:23px; background:url(../../images/index/cmp-close.gif) no-repeat; position:absolute;right:-4px;top:-4px; display:block; text-indent:-999em; cursor:pointer;} */
+/* .log-cmp-logo{height:84px; background:url(../../images/index/log-cmp-logo.jpg) no-repeat;} */
+.log-cmp-logo{height:0px; }
+.log-cmp-form{padding:24px 0 0 89px;}
+.cmp-legend{line-height:34px;border-bottom:1px solid #ececec; margin:0 7px; padding:12px 7px 0; color:#666;}
+.cmp-legend strong{font-size:24px; color:#f60; margin-right:10px; font-weight:normal;}
+.log-cmp-other{line-height:16px; padding:0 0 15px 89px;}
+.log-cmp-other a{height:16px; padding-left:20px; background:url(../../images/index/qq.jpg) no-repeat; display:inline-block; margin:0 5px;}
+.log-cmp-other a:link,.log-cmp-other a:visited{color:#9a9a9a; text-decoration:none;}
+.log-cmp-other a.sina{background:url(../../images/index/sina.jpg) no-repeat; padding-left:25px;}
+.log-cmp-other a.baidu{background:url(../../images/index/baidu.jpg) no-repeat;}
+a.free-register{margin-left:9px; vertical-align:middle; color:#024b98 !important;}
+
+/*身份认证*/
+.log-cmp,.certification-cmp1,.register-cmp{left:50%;text-align:left;}
+.certification-hint{height:52px; line-height:20px;padding:13px 0 0 84px;background:url(../../images/index/certification-hint.png) no-repeat 26px 13px #fff1d4; color:#000;}
+.certification-hint span{color:#f00;}
+
+/*新用户注册*/
+.direct-login{line-height:18px; color:#333; margin-left:12px; display:inline-block; text-align:left; vertical-align:middle;}
+.direct-login a:link,.direct-login a:visited{color:#0779da; text-decoration:none;}
