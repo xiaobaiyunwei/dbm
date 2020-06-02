@@ -14,8 +14,7 @@
 	<br>
 <!-- 获取ip列表 -->
 
-<%-- <Sql:sqlSession.selectList sqlMapId="demo_mysql" var="dataList"  stmt="ns.devops.redis.getRedisIP"></Sql:sqlSession.selectList>
- --%>
+<Sql:sqlSession.selectList sqlMapId="demo_mysql" var="dataList"  stmt="ns.devops.redis.getRedisIP"></Sql:sqlSession.selectList>
 	<div class="layui-fluid">
 		<div class="layui-row layui-col-space15">
 
@@ -23,7 +22,7 @@
 				<div class="layui-row layui-col-space15">
 					<div class="layui-col-md6">
 						<div class="layui-card">
-							<div class="layui-card-header">热KEY分析</div>
+							<div class="layui-card-header">热KEY分析：</div>
 							<div class="layui-card-body">
 
 								<form class="layui-form" action="">
@@ -47,7 +46,7 @@
 										<div class="layui-inline">
 											<label class="layui-form-label">端口</label>
 											<div class="layui-input-inline">
-												<select name="port">
+												<select name="port" lay-verify="required">
 													<option value="">请选择端口</option>
 													<option value="27001">27001</option>
 													<option value="27002">27002</option>
@@ -131,19 +130,6 @@
 
 							//创建一个编辑器
 							var editIndex = layedit.build('LAY_demo_editor');
-
-							//自定义验证规则
-							form.verify({
-								title : function(value) {
-									if (value.length < 5) {
-										return '标题至少得5个字符啊';
-									}
-								},
-								pass : [ /^[\S]{6,12}$/, '密码必须6到12位，且不能出现空格' ],
-								content : function(value) {
-									layedit.sync(editIndex);
-								}
-							});
 
 							//监听指定开关
 							form.on('switch(switchTest)', function(data) {

@@ -9,7 +9,8 @@
 </head>
 <body>
 <jsp:useBean id="paramMap" class="java.util.HashMap" scope="page">					
-			<c:set target="${paramMap}" property="describe" value="/bin/sh /opt/devops/cmd/detail.sh ${param.param}"></c:set>			
+<c:set target="${paramMap}" property="describe" value="/bin/sh /opt/devops/cmd/detail.sh ${param.param}"></c:set>
+				
 </jsp:useBean>
 
 

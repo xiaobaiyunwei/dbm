@@ -27,6 +27,11 @@
             <isNotNull prepend="AND" property="id"> id=#id# </isNotNull>
        		</dynamic>
     </select>
+    
+    
+     <select id="getRedisIP" parameterClass="java.util.Map" resultClass="com.devops.redis.domain.RedisData">
+        SELECT ip FROM redis_data
+    </select>
 
     <insert id="insertRedisData">
         INSERT INTO redis_data ( 

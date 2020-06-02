@@ -16,19 +16,13 @@
 	Map<Object, Object> paramMap = new HashMap<Object, Object>();
 	paramMap = (Map) objParameter;
 	String describe = StringUtil.nullToString(paramMap.get("describe"));
-	String shpath = describe;
-	String cmd[] = describe.split("\\s+");
+	
 	boolean waitresult = false;
 	String result = "";	
-	System.out.println("shpath:" + shpath);
+	System.out.println("执行命令:" + describe);
 	try {
-		List cmdlist = java.util.Arrays.asList(cmd);
-		Iterator<String> it = cmdlist.iterator();
-		while (it.hasNext()) {
-			System.out.println(it.next());
-		}
 		System.out.println("===000000000===");
-		Process ps = Runtime.getRuntime().exec(shpath);
+		Process ps = Runtime.getRuntime().exec(describe);
 		System.out.println("===000001111===");
 		waitresult=ps.waitFor(6, TimeUnit.SECONDS);
 		System.out.println("===000002222===");

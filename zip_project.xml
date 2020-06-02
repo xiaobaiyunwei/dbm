@@ -6,7 +6,6 @@
 	<property name="lib.root" value="${target}/WebRoot/WEB-INF/lib" />
 	<property name="dbm" value="${src}/dbm" />
 	<property name="dbm.src" value="${dbm}/src" />
-
 	<path id="all-libs">
 		<fileset dir="${lib.dir}">
 			<include name="*.jar" />
@@ -29,6 +28,5 @@
 		<zip destfile="${target}/dbm.zip" basedir="${target}/WebRoot" excludes="**/.svn;" />
 	</target>
 			
-	<target name="all" depends="" description="perform all targets" />
-			
+	<target name="all" depends="" description="perform all targets" />			
 </project>
