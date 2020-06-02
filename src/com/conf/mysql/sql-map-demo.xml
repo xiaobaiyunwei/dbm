@@ -19,4 +19,5 @@
 	   		 </dataSource>
   	</transactionManager>
 	<sqlMap resource="com/devops/demo/sql/SnsDemo_mysql.xml"/>
+	<sqlMap resource="com/devops/redis/sql/RedisData_mysql.xml"/>	
 </sqlMapConfig>

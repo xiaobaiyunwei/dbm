@@ -1,0 +1,71 @@
+#floatBoxBg {
+	width: 100%;
+	height: 100%;
+	background: #000;
+	filter: alpha(opacity = 30);
+	opacity: 0.3;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+.gts {
+	border: #D7E2EA 0px solid;
+	width: 430px;
+	position: absolute;
+	top: 174px;
+	left: 35%;
+	background: #fff;
+	z-index: 1002;
+}
+
+.gtc {
+	border: #D7E2EA 0px solid;
+	position: absolute;
+	top: 174px;
+	left: 35%;
+	background: #fff;
+	z-index: 1002;
+}
+
+.gg {
+	width: 650px;
+	overflow: hidden;
+	text-align: left;
+}
+
+.gg .top {
+	width: 650px;
+	height: 39px;
+	background: url(../../images/dialog/ziyuan_141.jpg) repeat-x;
+}
+
+.gg .top-left {
+	float: left;
+	width: 20px;
+	padding: 8px 17px 0 15px
+}
+
+.gg .top-center {
+	float: left;
+	line-height: 39px;
+	font-size: 14px;
+	color: #FFFFFF;
+}
+
+.gg .top-right {
+	float: right;
+	width: 40px;
+	text-align: center;
+	padding-top: 8px;
+}
+
+.gg {
+	border: #D7E2EA 0px solid;
+	position: absolute;
+	top: 174px;
+	left: 27%;
+	background: #fff;
+	z-index: 1002;
+}

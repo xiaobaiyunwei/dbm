@@ -15,8 +15,8 @@
 <!-- 			<property name="JDBC.Password" value="${passwd}" /> -->
 <!-- 		</dataSource> -->
 			<dataSource type="JNDI">
-	   			 <property name="DataSource" value="java:comp/env/jdbc/chinatet_op"/>
+	   			 <property name="DataSource" value="java:comp/env/jdbc/dbm"/>
 	   		 </dataSource>
   	</transactionManager>
-	<sqlMap resource="com/chinatet/demo/sql/SnsDemo_sqlserver.xml"/>
+	<sqlMap resource="com/devops/demo/sql/SnsDemo_sqlserver.xml"/>
 </sqlMapConfig>

@@ -56,21 +56,19 @@
                 <cite>主页</cite>
               </a>
               <dl class="layui-nav-child">
-                <dd data-name="console">
+                <dd data-name="console" class="layui-this">
                   <a lay-href="redis/init.shtm">Redis热Key</a>
                 </dd>                
-                <dd data-name="console" class="layui-this">
+                <dd data-name="console" >
                   <a lay-href="main/timeline.shtm">控制台</a>
                 </dd>
              <!--    <dd data-name="console" >
                   <a lay-href="main/more.shtm">更多扩展</a>
-                </dd>  -->               
-                
-                
+                </dd>  -->                                               
               </dl>
             </li>
             
-        <li data-name="set" class="layui-nav-item">
+           <li data-name="set" class="layui-nav-item">
               <a href="javascript:;" lay-tips="设置" lay-direction="2">
                 <i class="layui-icon layui-icon-set"></i>
                 <cite>设置</cite>
@@ -83,9 +81,7 @@
                   </dl>
                 </dd>                
               </dl>
-            </li>
-            
-            
+            </li>                        
            <!--  <li data-name="component" class="layui-nav-item">
               <a href="javascript:;" lay-tips="数据库" lay-direction="2">
                 <i class="layui-icon layui-icon-component"></i>
@@ -243,10 +239,6 @@
                 </dd>
               </dl>
             </li> -->
-    
-    
-    
-        
             
             
            <!--   <li data-name="set" class="layui-nav-item">
@@ -307,8 +299,7 @@
           </ul>
         </div>
       </div>                                            
-      
-      
+            
       <!-- 主体内容 -->
       <div class="layui-body" id="LAY_app_body">
         <div class="layadmin-tabsbody-item layui-show">

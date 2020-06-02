@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="ns.devops.redis">
+	<sql id="getRedisDataList_body">
+        SELECT *
+         FROM redis_data
+        <dynamic prepend="WHERE 1=1">
+            <isNotNull prepend="AND" property="id"> ip like concat( #ip#, '%') </isNotNull>
+        </dynamic>
+        order by id desc
+    </sql>
+
+    <select id="getRedisDataListCount" resultClass="int">
+        SELECT COUNT(*) FROM (
+            <include refid="getRedisDataList_body" />
+        ) AS myTable 
+    </select>
+
+    <select id="getRedisDataList" parameterClass="java.util.Map" resultClass="com.devops.redis.domain.RedisData">
+            <include refid="getRedisDataList_body" />
+        		LIMIT #pageNumStart# , #pageSize#
+    </select>
+
+    <select id="getRedisData" parameterClass="java.util.Map" resultClass="com.devops.redis.domain.RedisData">
+        SELECT * FROM redis_data
+       		<dynamic prepend="WHERE">
+            <isNotNull prepend="AND" property="id"> id=#id# </isNotNull>
+       		</dynamic>
+    </select>
+
+    <insert id="insertRedisData">
+        INSERT INTO redis_data ( 
+        <dynamic prepend="">
+            <isNotNull prepend="" property="ip"> ip </isNotNull>
+        </dynamic>
+        )
+        VALUES (
+        <dynamic prepend="">
+            <isNotNull prepend="" property="ip"> #ip# </isNotNull>
+        </dynamic>
+        )
+	    <selectKey resultClass="int" keyProperty="id" type="post" >  
+          select LAST_INSERT_ID() as id   
+        </selectKey>  
+    </insert>
+
+    <update id="updateRedisData"  parameterClass="java.util.Map">
+        UPDATE redis_data
+        <dynamic prepend="SET">
+            <isNotNull prepend="," property="name"> name=#name:VARCHAR# </isNotNull>
+            <isNotNull prepend="," property="age"> age=#age# </isNotNull>
+            <isNotNull prepend="," property="phone"> phone=#phone:VARCHAR# </isNotNull>
+            <isNotNull prepend="," property="describe"> describeInfo=#describe# </isNotNull>
+        </dynamic>
+
+        <dynamic prepend="WHERE">
+            <isNotNull prepend="AND" property="id"> id=#id# </isNotNull>
+        </dynamic>
+    </update>
+	
+	<delete id="deleteRedisData" parameterClass="Integer">
+		DELETE FROM redis_data WHERE id=#id#
+	</delete>
+
+</sqlMap>

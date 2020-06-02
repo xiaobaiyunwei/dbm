@@ -2,10 +2,6 @@
 <%@ include file="/WEB-INF/jsp/common/common.jsp"%>
 <!DOCTYPE html>
 <html>
-
-
-
-
 <head>
 <meta charset="utf-8">
 <title>Redis管理</title>

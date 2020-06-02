@@ -21,7 +21,7 @@
 		<c:set target="${pageScope.generBean}" property="pageNumStart" value="${pageInfo.pageNumStart }"></c:set>
 		<c:set target="${pageScope.generBean}" property="pageSize" value="${pageInfo.pageSize}"></c:set>
 	</jsp:useBean>
-<util:getListForPage sqlMapId="demo_mysql" stmtCount="ns.devops.redis.getRedisDataListCount" stmt="ns.dbm.redis.getRedisDataList" varCount="totalCount"
+<util:getListForPage sqlMapId="demo_mysql" stmtCount="ns.devops.redis.getRedisDataListCount" stmt="ns.devops.redis.getRedisDataList" varCount="totalCount"
 		pageCount="${pageInfo.pageSize}" var="dataList" param="${generBean}" />
 	<util:pageTurn pageNum="${pageInfo.pageNum}" totleCount="${totalCount}" pageCount="${pageInfo.pageSize}" var="pageObj" />
 <%-- 	<c:if test="${not empty dataList}">

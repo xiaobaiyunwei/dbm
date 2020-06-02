@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
-<project name="chinatet_pub" basedir="." default="all">
+<project name="dbm" basedir="." default="all">
 	<property name="src" value=".." />
 	<property name="target" value="${src}/target" />
 	<property name="lib.dir" value="lib" />
 	<property name="lib.root" value="${target}/WebRoot/WEB-INF/lib" />
-	<property name="chinatet_pub" value="${src}/chinatet_pub" />
-	<property name="chinatet_pub.src" value="${chinatet_pub}/src" />
+	<property name="dbm" value="${src}/dbm" />
+	<property name="dbm.src" value="${dbm}/src" />
 
 	<path id="all-libs">
 		<fileset dir="${lib.dir}">
@@ -17,16 +17,16 @@
 		<mkdir dir="${target}" />
 	</target>
 
-	<!-- make chinatet_pub zip -->
-	<target name="chinatet_pub.zip" depends="init" description="Compile ibs src file">
+	<!-- make project zip -->
+	<target name="dbm.zip" depends="init" description="Compile ibs src file">
 		<delete dir="${target}/WebRoot" />
 		<mkdir dir="${target}/WebRoot" />
 		<copy todir="${target}/WebRoot">
-			<fileset dir="${chinatet_pub}/WebRoot">
+			<fileset dir="${dbm}/WebRoot">
 				<exclude name="**/.svn" />
 			</fileset>
 		</copy>
-		<zip destfile="${target}/chinatet_pub.zip" basedir="${target}/WebRoot" excludes="**/.svn;" />
+		<zip destfile="${target}/dbm.zip" basedir="${target}/WebRoot" excludes="**/.svn;" />
 	</target>
 			
 	<target name="all" depends="" description="perform all targets" />

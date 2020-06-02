@@ -268,6 +268,7 @@ $.extend($.validator, {
 		equalTo: "Please enter the same value again.",
 		accept: "Please enter a value with a valid extension.",
 		phone: "Please enter a valid phoe.",
+		isip: "Please enter a valid ipaddress.",
 		maxlength: $.validator.format("Please enter no more than {0} characters."),
 		minlength: $.validator.format("Please enter at least {0} characters."),
 		rangelength: $.validator.format("Please enter a value between {0} and {1} characters long."),
@@ -755,7 +756,8 @@ $.extend($.validator, {
 		numberDE: {numberDE: true},
 		digits: {digits: true},
 		creditcard: {creditcard: true},
-		phone: {phone:true}
+		phone: {phone:true},
+		isip: {isip:true}
 	},
 	
 	addClassRules: function(className, rules) {
@@ -1037,6 +1039,12 @@ $.extend($.validator, {
 		    var tel = /^(130|131|132|133|134|135|136|137|138|139|150|153|157|158|159|180|187|188|189)\d{8}$/; 
 		    return tel.test(value) || this.optional(element); 	
 		},
+		
+		isip: function(value, element) {    
+			var ipadds= /^(([1-9]|([1-9]\d)|(1\d\d)|(2([0-4]\d|5[0-5])))\.)(([1-9]|([1-9]\d)|(1\d\d)|(2([0-4]\d|5[0-5])))\.){2}([1-9]|([1-9]\d)|(1\d\d)|(2([0-4]\d|5[0-5])))$/;
+			return ipadds.test(value) || this.optional(element) ;    
+	    }, 
+		
 		
 		// http://docs.jquery.com/Plugins/Validation/Methods/creditcard
 		// based on http://en.wikipedia.org/wiki/Luhn
