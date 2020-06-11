@@ -26,8 +26,7 @@
 		<div style="padding-bottom: 10px;">
 			<button class="layui-btn layuiadmin-btn-admin" onClick="toAddData()">添加</button>			
 		</div>
-	</div>
-	
+	</div>	
 	<input type='hidden' id='pageNum' name="pageNum" value='' />
 	<div id="data_list"></div>
 	<div id="data_add"></div>
@@ -36,8 +35,6 @@
 </body>
 
 <script type="text/javascript">
-	
-
 	$().ready(function() {
 		$.metadata.setType("attr", "validate");
 		dataList(1);

@@ -27,22 +27,23 @@
 											<label class="layui-form-label">WIFI</label>
 											<div class="layui-input-inline">
 												<select name="dns"  id="dns"  lay-verify="required">
-													<option value="">选择WIFI</option>
+													<option value="">选择您要绑定的WIFI</option>
 													<option value="192.168.192.165">DL-LanDev</option>
 													<option value="192.168.192.166">DL-LanTest</option>
 													<option value="192.168.190.11">DL-WanTest</option>													
+													<option value="192.168.192.103">DL-DNS-Test</option>													
 												</select> 
 											</div>
 										</div>
 									</div>
-									<div class="layui-form-item">
+									<!-- <div class="layui-form-item">
 										<div class="layui-inline">
-											<label class="layui-form-label">客户端IP</label>
-											<div class="layui-input-inline">
-												<input type="text" id="clientIp" name="clientIp" value="192.168.190.66" lay-verify="required:true,maxlength:20,isip:true" autocomplete="off" class="layui-input">
-											</div>
+											<label class="layui-form-label">客户端IP（）</label>
+											<div class="layui-input-inline"> -->
+												<input type="hidden" id="clientIp" name="clientIp" value="192.168.192.88" lay-verify="required:true,maxlength:20,isip:true" autocomplete="off" class="layui-input">
+								<!-- 			</div>
 										</div>
-									</div>
+									</div> -->
 									<div class="layui-form-item">
 										<div class="layui-inline">
 											<label class="layui-form-label">MAC地址</label>
@@ -50,8 +51,7 @@
 												<input type="text" id="mac" name="mac" value="44:a8:42:26:ca:76" lay-verify="required" autocomplete="off" class="layui-input">
 											</div>
 										</div>
-									</div>
-												
+									</div>												
 									<div class="layui-form-item">
 										<div class="layui-input-block;" style="text-align: center;">
 											<button type="submit" class="layui-btn" lay-submit="" lay-filter="setwifi">确定</button>

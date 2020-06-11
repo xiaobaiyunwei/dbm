@@ -12,10 +12,6 @@
 <link rel="stylesheet" href="${_currConText}${_jsURL }/layui/${_cssURL }/layui.css" media="all">
 </head>
 <body>
-<%-- <wifi:getipbyrequest var="clientIP"></wifi:getipbyrequest>
-${clientIP } --%>
-	<br>
-<!-- 获取ip列表 -->
 	<div class="layui-fluid">	
 			<div class="layui-col-md8">
 				<div class="layui-row layui-col-space15">
@@ -50,17 +46,14 @@ ${clientIP } --%>
 					</div>							
 				</div>
 			</div>	
-	</div>	
-	
-	
-	<input type="hidden" id="clientIp" value="${param.clientIp}"/>
+	</div>			
+	<input type="hidden" id="clientIp" value="192.168.192.88"/>
 	<input type="hidden" id="mac" value="${param.mac}"/>
 	<script src="${_currConText}${_jsURL }/layui/layui.js" charset="utf-8"></script>
 	<script src="${_currConText}${_jsURL }/jquery/jquery.js" type="text/javascript"></script>
 	<script src="${_currConText}/js/dbm/dataope.js" type="text/javascript"></script>
 	<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 	<script>
-
 	$(document).ready(function(){
 		$("#selected").change(function(){
 			if($("option:selected",this).val()=='0'){
@@ -117,10 +110,7 @@ ${clientIP } --%>
 									alert(JSON.stringify(data));
 								});
 	
-		});
-
-	
+		});	
 	</script>
-
 </body>
 </html>

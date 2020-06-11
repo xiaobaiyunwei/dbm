@@ -12,6 +12,7 @@
 	String strVar = (String) jspContext.getAttribute("var");
 	Map<Object, Object> paramMap = new HashMap<Object, Object>();
 	paramMap = (Map) objParameter;
+	//clientIp实际为连接外网的dns，起初是准备绑定用户ip的，后来改为mac地址参数名称就没有做调整。
 	String clientIp = StringUtil.nullToString(paramMap.get("clientIp"));
 	String dns = StringUtil.nullToString(paramMap.get("dns"));
 	String mac = StringUtil.nullToString(paramMap.get("mac"));
