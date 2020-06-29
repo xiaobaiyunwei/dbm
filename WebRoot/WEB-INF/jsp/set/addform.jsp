@@ -6,6 +6,7 @@
 <script src="${_currConText}${_jsURL }/jquery/messages_cn.js" type="text/javascript"></script>
 <link rel="stylesheet" href="${_currConText}${_jsURL }/layuiadmin/layui/css/layui.css" media="all">
 <form id="add_form" name="add_form" method="post">	
+<br>
                   <label class="layui-form-label">IP地址：</label>
                   <div class="layui-input-block">
                     <input type="text" id="ip"  name="ip" class="layui-input" validate="required:true,maxlength:20,isip:true"/>

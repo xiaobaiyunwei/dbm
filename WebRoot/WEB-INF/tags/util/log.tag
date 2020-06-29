@@ -1,4 +1,3 @@
-<%-- author:pengbaoliang, date:2012-2-23 --%>
 <%@tag import="javax.servlet.jsp.tagext.TagSupport"%>
 <%@tag import="org.apache.log4j.Logger"%>
 <%@tag import="java.security.MessageDigest"%><%@ attribute

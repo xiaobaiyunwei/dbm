@@ -9,13 +9,15 @@
 </head>
 <body>
 <jsp:useBean id="paramMap" class="java.util.HashMap" scope="page">					
-<c:set target="${paramMap}" property="describe" value="/bin/sh /opt/devops/cmd/detail.sh ${param.param}"></c:set>
-				
+	<c:if test="${param.type eq 'ip'}">
+		<c:set target="${paramMap}" property="describe" value="/bin/sh /opt/devops/cmd/ip_detail.sh ${param.param}"></c:set>	
+	</c:if>
+	<c:if test="${param.type eq 'cmd'}">
+		<c:set target="${paramMap}" property="describe" value="/bin/sh /opt/devops/cmd/detail.sh ${param.param}"></c:set>
+	</c:if>
 </jsp:useBean>
-
-
 <dbm:detail var="result" param="${paramMap }"></dbm:detail>
-${param}
+<strong>【The result of ${param.param}】</strong><br>
 ${result }
 </body>
 </html>

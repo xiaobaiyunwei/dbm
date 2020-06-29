@@ -31,6 +31,13 @@
 						<ul class="layui-timeline">
 							<li class="layui-timeline-item"><i class="layui-icon layui-timeline-axis"></i>
 								<div class="layui-timeline-content layui-text">
+									<div class="layui-timeline-title">2020年6月17日，生产环境发布上线（618活动前夕）；									
+									</div>
+								</div>
+							</li>
+						
+							<li class="layui-timeline-item"><i class="layui-icon layui-timeline-axis"></i>
+								<div class="layui-timeline-content layui-text">
 									<div class="layui-timeline-title">2020年5月29日，增加redis维护版块；
 									<a lay-href="set/init.shtm">查看redis维护</a>
 									</div>
@@ -39,20 +46,20 @@
 						
 							<li class="layui-timeline-item"><i class="layui-icon layui-timeline-axis"></i>
 								<div class="layui-timeline-content layui-text">
-									<div class="layui-timeline-title">2020年5月27日，增加mysql下CRUD开发，增加前端UI框架JBOX
+									<div class="layui-timeline-title">2020年5月27日，增加mysql下CRUD开发，增加前端UI框架JBOX；
 									<a lay-href="demo/mysql/init.shtm">查看CRUD demo</a>
 									</div>
 								</div></li>
 				
 							<li class="layui-timeline-item"><i class="layui-icon layui-timeline-axis"></i>
 								<div class="layui-timeline-content layui-text">
-									<div class="layui-timeline-title">2020年5月26日，完成Redis热Key分析模块功能，达到预发布状态。
+									<div class="layui-timeline-title">2020年5月26日，完成Redis热Key分析模块功能，达到预发布状态；
 									<a lay-href="redis/init.shtm">Redis热Key分析</a>
 									</div>
 								</div></li>
 							<li class="layui-timeline-item"><i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop layui-timeline-axis"></i>
 								<div class="layui-timeline-content layui-text">
-									<div class="layui-timeline-title">更久前，在Jodd、Falcon、Archery、DataX等开源Project中寻找灵感</div>
+									<div class="layui-timeline-title">更久前，在Jodd、Falcon、Archery、DataX等开源Project中寻找灵感……</div>
 								</div></li>
 						</ul>
 					</div>

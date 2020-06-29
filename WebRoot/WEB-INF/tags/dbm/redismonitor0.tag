@@ -19,7 +19,9 @@
 	System.out.println("ip:" + ip);
 	System.out.println("linenum:" + linenum);
 	String shpath = "/bin/sh /opt/devops/cmd/redis1.sh " + ip + " " + port;
+	System.out.println("=======monitor cmd is===:"+shpath);
 	String cmd[] = shpath.split(" ");
+	System.out.println("cmd length is=======:"+cmd.length);
 	boolean waitresult = false;
 	String result = "";
 	int tmpline = 1;
@@ -30,7 +32,7 @@
 		Process ps = pb.start();
 		//Process ps = Runtime.getRuntime().exec(shpath);
 		//int waitresult=ps.waitFor();
-		waitresult = ps.waitFor(3, TimeUnit.SECONDS);
+		waitresult = ps.waitFor(6, TimeUnit.SECONDS);
 		BufferedReader br = new BufferedReader(new InputStreamReader(ps.getInputStream()));
 		StringBuffer sb = new StringBuffer();
 		String line;
@@ -38,15 +40,15 @@
 			System.out.println("redismonitor-输出行数=="+tmpline+"===：" + linenum + "line info:" + line);
 			//out.println(linenum+line+"<br>out");
 			sb.append(line).append("\n<br>");
-			if (tmpline > linenum) {
+			if (tmpline > linenum) {				
 				break;
 			}
 			tmpline++;
 		}
 		result = sb.toString();
-		br.close();
 		ps.destroy();
 		pb.directory();
+		br.close();
 	} catch (Exception e) {
 		e.printStackTrace();
 	} finally {

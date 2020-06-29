@@ -14,6 +14,7 @@
 	Map<Object, Object> paramMap = new HashMap<Object, Object>();
 	paramMap = (Map) objParameter;
 	String describe = StringUtil.nullToString(paramMap.get("describe"));
+	String type = StringUtil.nullToString(paramMap.get("type"));
 	String shpath = describe;
 	String cmd[] = describe.split(" ");
 	int waitresult = 0;
@@ -33,15 +34,23 @@
 		while ((line = br.readLine()) != null) {
 			String iporcmd = "";
 			if (line != null && line.length() > 0) {
-				System.out.println("line info:" + line.trim());
+				//System.out.println("line info:" + line.trim());
 				//String tmp[]=line.trim().toString().split("\\s+");
 				String str = line.trim().toString();
-				System.out.println(str.substring(str.split("\\s+")[0].length()+1,str.length()));
+				//System.out.println(str.substring(str.split("\\s+")[0].length()+1,str.length()));
 				iporcmd = str.substring(str.split("\\s+")[0].length()+1,str.length());
-				System.out.println("iporcmd============:" + iporcmd);
+				//System.out.println("iporcmd============:" + iporcmd);
 			}
-			sb.append(line).append("<a target='_blank' href='./detail.shtm?param=" + iporcmd + "'>查看详情</a>")
-					.append("\n<br>");
+			if(type.equals("cmd")){
+				if(iporcmd.indexOf("PING")>0){
+					sb.append(line).append("<a target='_blank' href='./detail.shtm?type=ip&param=" + iporcmd + "'>查看详情</a>").append("\n<br>");	
+				}else{
+					sb.append(line).append("<a target='_blank' href='./detail.shtm?type=cmd&param=" + iporcmd + "'>查看详情</a>").append("\n<br>");
+				}
+			}
+			else if(type.equals("ip")){
+				sb.append(line).append("<a target='_blank' href='./detail.shtm?type=ip&param=" + iporcmd + "'>查看详情</a>").append("\n<br>");
+			}			
 		}
 		result = sb.toString();
 		br.close();

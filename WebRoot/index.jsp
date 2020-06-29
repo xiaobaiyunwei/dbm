@@ -47,8 +47,7 @@
         <div class="layui-side-scroll">
           <div class="layui-logo" lay-href="main/timeline.shtm">
             <span>DB Console</span>
-          </div>
-          
+          </div>          
           <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu" lay-filter="layadmin-system-side-menu">
             <li data-name="home" class="layui-nav-item layui-nav-itemed">
               <a href="javascript:;" lay-tips="主页" lay-direction="2">
@@ -164,8 +163,6 @@
                     <dd data-name="replys"><a lay-href="app/forum/replys.html">答题试卷</a></dd>                    
                   </dl>
                 </dd>
-                
-                
                 <dd data-name="forum">
                   <a href="javascript:;">短视频</a>
                   <dl class="layui-nav-child">
@@ -176,8 +173,7 @@
 
               </dl>
             </li>
-            -->
-           
+            -->           
 <!--             <li data-name="senior" class="layui-nav-item">
               <a href="javascript:;" lay-tips="高级" lay-direction="2">
                 <i class="layui-icon layui-icon-senior"></i>
@@ -215,8 +211,6 @@
                 </dd>
               </dl>
             </li>-->
-            
-            
      <!--        <li data-name="set" class="layui-nav-item"> 
               <a href="javascript:;" lay-tips="设置" lay-direction="2">
                 <i class="layui-icon layui-icon-set"></i>
@@ -300,17 +294,17 @@
         </div>
       </div>                                            
             
-      <!-- 主体内容 -->
+      <!-- 主体内容，默认加载！-->
       <div class="layui-body" id="LAY_app_body">
         <div class="layadmin-tabsbody-item layui-show">
           <iframe src="redis/init.shtm" frameborder="0" class="layadmin-iframe"></iframe>
+          <!-- main/timeline.shtm -->
         </div>
       </div>      
       <!-- 辅助元素，一般用于移动设备下遮罩 -->
       <div class="layadmin-body-shade" layadmin-event="shade"></div>
     </div>
   </div>
-
   <script src="${_currConText}${_jsURL }/layuiadmin/layui/layui.js"></script>
   <script>
   layui.config({
@@ -318,9 +312,6 @@
   }).extend({
     index: 'lib/index' //主入口模块
   }).use('index');
-  </script>
-  
+  </script>  
 </body>
 </html>
-
-

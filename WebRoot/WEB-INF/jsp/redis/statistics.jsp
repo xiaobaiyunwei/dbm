@@ -9,6 +9,7 @@
 %>
 <jsp:useBean id="paramMap" class="java.util.HashMap" scope="page">					
 			<c:set target="${paramMap}" property="describe" value="${param.describe}"></c:set>			
+			<c:set target="${paramMap}" property="type" value="${param.type}"></c:set>			
 </jsp:useBean>
 <dbm:statistics  var="result" param="${paramMap}"></dbm:statistics>
 
@@ -24,5 +25,4 @@ ${result }
 ${result }
 =========The statistics of CMD end==============
 </c:if>
-
 </div>

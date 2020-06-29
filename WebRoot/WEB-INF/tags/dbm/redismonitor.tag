@@ -14,47 +14,45 @@
 	Map<Object, Object> paramMap = new HashMap<Object, Object>();
 	paramMap = (Map) objParameter;
 	String ip = StringUtil.nullToString(paramMap.get("ip"));
-	String describe = StringUtil.nullToString(paramMap.get("describe"));
+	String port = StringUtil.nullToString(paramMap.get("port"));
 	Integer linenum = Integer.valueOf(paramMap.get("linenum").toString());
 	System.out.println("ip:" + ip);
 	System.out.println("linenum:" + linenum);
-	String shpath = describe;
-	String cmd[] = describe.split(" ");
+	String shpath = "/bin/sh /opt/devops/cmd/redis1.sh " + ip + " " + port;
+	System.out.println("=======monitor cmd is===:"+shpath);
+	String cmd[] = shpath.split(" ");
+	System.out.println("cmd length is=======:"+cmd.length);
 	boolean waitresult = false;
 	String result = "";
+	int tmpline = 1;
 	try {
 		List cmdlist = java.util.Arrays.asList(cmd);
-		Iterator<String> it = cmdlist.iterator();
-		while (it.hasNext()) {
-			System.out.println(it.next());
-		}
 		System.out.println("shpath:" + cmd.length);
 		ProcessBuilder pb = new ProcessBuilder(cmdlist);
 		Process ps = pb.start();
-		//	Process ps = Runtime.getRuntime().exec(shpath);
+		//Process ps = Runtime.getRuntime().exec(shpath);
 		//int waitresult=ps.waitFor();
-		waitresult = ps.waitFor(3, TimeUnit.SECONDS);
+		waitresult = ps.waitFor(6, TimeUnit.SECONDS);
 		BufferedReader br = new BufferedReader(new InputStreamReader(ps.getInputStream()));
 		StringBuffer sb = new StringBuffer();
 		String line;
-		int tmpline = 1;
 		while ((line = br.readLine()) != null) {
-			System.out.println(linenum + "line info:" + line);
+			System.out.println("redismonitor-输出行数=="+tmpline+"===：" + linenum + "line info:" + line);
 			//out.println(linenum+line+"<br>out");
 			sb.append(line).append("\n<br>");
-			if (tmpline > linenum) {
+			if (tmpline > linenum) {				
+				ps.destroy();
 				break;
 			}
 			tmpline++;
 		}
 		result = sb.toString();
-		br.close();
-		ps.destroy();
 		pb.directory();
+		br.close();
 	} catch (Exception e) {
 		e.printStackTrace();
 	} finally {
 	}
 	System.out.println("waitresult===========" + waitresult);
-	jspContext.setAttribute(var, result, PageContext.REQUEST_SCOPE);
+	jspContext.setAttribute(var, tmpline, PageContext.REQUEST_SCOPE);
 %>
