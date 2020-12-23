@@ -31,7 +31,15 @@
 						<ul class="layui-timeline">
 							<li class="layui-timeline-item"><i class="layui-icon layui-timeline-axis"></i>
 								<div class="layui-timeline-content layui-text">
-									<div class="layui-timeline-title">2020年6月17日，生产环境发布上线（618活动前夕）；									
+									<div class="layui-timeline-title">
+										2020年12月15日，项目再次启动，并于12月23日完成Redis大Key实时分析功能（圣诞前夕）；
+									</div>
+								</div>
+							</li>
+							<li class="layui-timeline-item"><i class="layui-icon layui-timeline-axis"></i>
+								<div class="layui-timeline-content layui-text">
+									<div class="layui-timeline-title">2020年6月17日，生产环境发布上线（618活动前夕）；
+										由于做数据同步项目，此项目搁置；
 									</div>
 								</div>
 							</li>
