@@ -28,7 +28,7 @@
 	try {
 		List cmdlist = java.util.Arrays.asList(cmd);
 		System.out.println("shpath:" + cmd.length);
-		ProcessBuilder pb = new ProcessBuilder(cmdlist);
+		ProcessBuilder pb = new ProcessBuilder(cmdlist);//执行脚本命令
 		Process ps = pb.start();
 		//Process ps = Runtime.getRuntime().exec(shpath);
 		//int waitresult=ps.waitFor();

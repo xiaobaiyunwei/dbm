@@ -26,7 +26,7 @@
 			System.out.println(it.next());
 		}
 		System.out.println("shpath:" + shpath);
-		Process ps = Runtime.getRuntime().exec(shpath);
+		Process ps = Runtime.getRuntime().exec(shpath);//执行分析脚本
 		waitresult = ps.waitFor();
 		BufferedReader br = new BufferedReader(new InputStreamReader(ps.getInputStream()));
 		StringBuffer sb = new StringBuffer();
@@ -41,14 +41,14 @@
 				iporcmd = str.substring(str.split("\\s+")[0].length()+1,str.length());
 				//System.out.println("iporcmd============:" + iporcmd);
 			}
-			if(type.equals("cmd")){
+			if(type.equals("cmd")){//热命令分析
 				if(iporcmd.indexOf("PING")>0){
 					sb.append(line).append("<a target='_blank' href='./detail.shtm?type=ip&param=" + iporcmd + "'>查看详情</a>").append("\n<br>");	
 				}else{
 					sb.append(line).append("<a target='_blank' href='./detail.shtm?type=cmd&param=" + iporcmd + "'>查看详情</a>").append("\n<br>");
 				}
 			}
-			else if(type.equals("ip")){
+			else if(type.equals("ip")){//ip前10分析
 				sb.append(line).append("<a target='_blank' href='./detail.shtm?type=ip&param=" + iporcmd + "'>查看详情</a>").append("\n<br>");
 			}			
 		}

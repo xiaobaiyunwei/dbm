@@ -4,30 +4,22 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
     http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
-
     <context-param>
         <param-name>log4jConfigLocation</param-name>
         <param-value>classpath:log4j.properties</param-value>
     </context-param>
-    
-    
-    <!-- 过滤script等 -->
-  <!--   <filter>
-        <filter-name>pubScriptFilter</filter-name>
-        <filter-class>com.devpos.rad3.filter.PubScriptFilter</filter-class>
-    </filter>
-    
-    <filter-mapping>
-        <filter-name>pubScriptFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping> -->
-    
-    <!--  -->
+
+    <resource-ref>
+        <res-ref-name>jdbc/mysql</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+
     <listener>
         <listener-class>com.cdeledu.rad3.ibatis2.SqlMapperPool</listener-class>
     </listener>
 
-    
     <servlet>
         <servlet-name>dispatchServlet</servlet-name>
         <servlet-class>com.devops.rad3.servlet.DispatchServlet</servlet-class>
@@ -41,24 +33,18 @@
         <servlet-name>dispatchServlet</servlet-name>
         <url-pattern>*.jswf</url-pattern>
     </servlet-mapping>
-    
 
-	
-
-	
     <jsp-config>
         <taglib>
             <taglib-uri>http://java.sun.com/jstl/core</taglib-uri>
             <taglib-location>/WEB-INF/tld/c.tld</taglib-location>
         </taglib>
-
         <taglib>
             <taglib-uri>http://java.sun.com/jstl/fmt</taglib-uri>
             <taglib-location>/WEB-INF/tld/fmt.tld</taglib-location>
         </taglib>
         
         <jsp-property-group>
-          <!-- html -->
           <description>针对.html的配置.</description>
           <display-name>JSPConfiguration</display-name>
           <url-pattern>*.html</url-pattern>
@@ -74,7 +60,6 @@
         <welcome-file>index.shtm</welcome-file>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
-    
 
     <error-page> 
     <error-code>404</error-code> 
@@ -83,6 +68,5 @@
     <error-page> 
     <error-code>500</error-code> 
     <location>/500.jsp</location> 
-    </error-page> 
-    
+    </error-page>
 </web-app>

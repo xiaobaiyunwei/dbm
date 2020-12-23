@@ -28,7 +28,6 @@
               <i class="layui-icon layui-icon-shrink-right" id="LAY_app_flexible"></i>
             </a>
           </li>
-          
           <li class="layui-nav-item" lay-unselect>
             <a href="javascript:;" layadmin-event="refresh" title="刷新">
               <i class="layui-icon layui-icon-refresh-3"></i>
@@ -57,8 +56,11 @@
               <dl class="layui-nav-child">
                 <dd data-name="console" class="layui-this">
                   <a lay-href="redis/init.shtm">Redis热Key</a>
-                </dd>                
-                <dd data-name="console" >
+                </dd>
+                <dd data-name="console">
+                  <a lay-href="bigkey/init.shtm">Redis大Key</a>
+                </dd>
+                <dd data-name="console">
                   <a lay-href="main/timeline.shtm">控制台</a>
                 </dd>
              <!--    <dd data-name="console" >
@@ -289,7 +291,9 @@
         </div>
         <div class="layui-tab" lay-unauto lay-allowClose="true" lay-filter="layadmin-layout-tabs">
           <ul class="layui-tab-title" id="LAY_app_tabsheader">
-            <li lay-id="redis/init.shtm" lay-attr="redis/init.shtm" class="layui-this"><i class="layui-icon layui-icon-home"></i></li>
+            <li lay-id="redis/init.shtm" lay-attr="redis/init.shtm" class="layui-this">
+              <span>Redis热KEY</span>
+              </li>
           </ul>
         </div>
       </div>                                            

@@ -39,6 +39,13 @@ layui.define('layer', function(exports){
         ,number: function(value){
           if(!value || isNaN(value)) return '只能填写数字'
         }
+        ,length: function(value, item){ //value：表单的值、item：表单的DOM对象
+          		if(value!=""){  //值不是空的时候再去走验证
+          			if(value<1000){
+          				return '数字不能小于1000';
+          			}
+          		}
+          	}
         ,date: [
           /^(\d{4})[-\/](\d{1}|0\d{1}|1[0-2])([-\/](\d{1}|0\d{1}|[1-2][0-9]|3[0-1]))*$/
           ,'日期格式不正确'

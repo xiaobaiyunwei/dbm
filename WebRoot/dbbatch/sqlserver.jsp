@@ -16,9 +16,9 @@
 		String url="jdbc:sqlserver://192.168.181.3:1433; DatabaseName=aaa";
 		String user="sa";
 		String password="cailiqiang";
-		Connection   conn=   DriverManager.getConnection(url,user,password);
+		Connection   conn=DriverManager.getConnection(url,user,password);
 		conn.setAutoCommit(false);
-		Statement   stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
+		Statement  stmt=conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
 		String base_sql="insert into IVR_MENU_INFO (IVR_MENU_ID,CALLER_NUMBER,CALLED_NUMBER,SSP_ID,IVR_MENU_TYPE_CODE,CHANGE_CHOICE) values (";
 		String str[]={",'good'",",'great'",",'wonderful'",",'awesome'",",'fantastic'",",'beautiful'",",'perfect'",",'terrific'"};
 		long start_time = System.currentTimeMillis();

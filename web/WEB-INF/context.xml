@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<Context path="/">-->
+<Context >
+    <!--<WatchedResource>WEB-INF/web.xml</WatchedResource>-->
+    <Resource
+            name="jdbc/dbm"
+            url="jdbc:mysql://192.168.192.217:3306/test"
+            auth="Container"
+            driverClassName="com.mysql.jdbc.Driver"
+            maxIdle="3"
+            maxActive="15"
+            maxWait="5000"
+            username="root"
+            password="cdel9999"
+            type="javax.sql.DataSource"
+    />
+</Context>
