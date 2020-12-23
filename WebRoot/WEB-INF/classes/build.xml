@@ -6,10 +6,10 @@
     <!-- #### You can modify here #### -->
 <property name="workspaces.dir" value="D:\Workspaces\"/>
 <property name="module" value="fee"/> 
-<property name="package" value="com/chinatet/${module}"/>
+<property name="package" value="com/devops/${module}"/>
     <!-- #### End. #### -->
 <!-- ========== project information ========== -->
-<property name="project" value="${workspaces.dir}/chinatet_pub"/>
+<property name="project" value="${workspaces.dir}/dbm"/>
 <!-- ========== tomcat config ========== -->
 <property name="user" value="root"/>
 <property name="passwd" value="cdeltech"/>
@@ -19,11 +19,11 @@
 <property name="tomcat" value="${user}:${passwd}@${host}:${baseDir}"/>
 <!-- ========== db config for source generating ========== -->
 <property name="db.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-<property name="db.url" value="jdbc:sqlserver://192.168.181.6:1433;DatabaseName=chinatet_op"/>
+<property name="db.url" value="jdbc:sqlserver://192.168.181.6:1433;DatabaseName=test"/>
 <property name="db.user" value="sa"/>
 <property name="db.passwd" value="cailiqiang"/>
     <!-- #### You can modify here #### -->
-<property name="project.package" value="com.chinatet.${module}"/>
+<property name="project.package" value="com.devops.${module}"/>
 <property name="db.table" value="OP_FEE_BALANCEBILL"/>
 <property name="src.domain" value="BalanceBill"/>
     <!-- #### End. #### -->
