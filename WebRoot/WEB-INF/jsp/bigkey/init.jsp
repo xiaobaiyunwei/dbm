@@ -69,7 +69,7 @@
 					</div>
 					<!-- IP分组Start -->
 					<div class="layui-col-md6">
-						<div class="layui-card" style="width: 720px;">
+						<div class="layui-card" style="width: 726px;">
 							<div class="layui-card-header">分析结果</div>
 							<div class="layui-card-body layui-text" id="ip_result" ></div>
 						</div>
