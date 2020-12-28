@@ -3,7 +3,7 @@
  * 
  * @param url,执行的方法路径;
  * @param div_id,数据显示在id为div_id的位置;
- * @author fuxuemin
+ * @author guiguketang
  */
 function postDataPre(url,div_id){
 	if(url!=null && url.length>0 && div_id!=null){
@@ -45,7 +45,7 @@ function postData(url,fields,values,div_id){
  * @param url,执行的方法路径;
  * @param fields,url接收的参数;
  * @param values,url接收的参数对应的值;
- * @author fuxuemin
+ * @author guiguketang
  */
 function addData(url,fields,values,div_id,callback){
 	if(fields.length==values.length){
@@ -107,7 +107,7 @@ function addDataAsync(url,fields,values,div_id,callback){
  * @param stmt,sql中声明操作的方法;
  * @param sqlMapId
  * @param result,返回的结果对象;
- * @author fuxuemin
+ * @author guiguketang
  */
 function toEditData(url,id,div_id,stmt,sqlMapId,result){	
     $.get(url,{id:id,stmt:stmt,sqlMapId:sqlMapId,result:result},function(data){
@@ -136,7 +136,7 @@ function toEditDataMy(url,id,div_id,stmt,sqlMapId,result){
  * @param url,执行的方法路径;
  * @param fields,url接收的参数;
  * @param values,url接收的参数对应的值;
- * @author fuxuemin
+ * @author guiguketang
  */
 function editData(url,fields,values,callback){
 	
@@ -165,7 +165,7 @@ function editData(url,fields,values,callback){
  * @param id,根据id删除记录;
  * @param stmt,sql中声明操作的方法;
  * @param sqlMapId
- * @author fuxuemin
+ * @author guiguketang
  */
 function deleteData(url,id,stmt,sqlMapId){
     $.get(url,{id:id,stmt:stmt,sqlMapId:sqlMapId},function(data){
@@ -193,7 +193,7 @@ function deleteDataMy(url,messegeID,stmt,sqlMapId){
  * @param fields,url接收的参数;
  * @param values,url接收的参数对应的值;
  * @param needload,是否需要加载背景层
- * @author fuxuemin
+ * @author guiguketang
  */
 function listData(url,div_id,fields,values,callback,needload){
 	if(fields.length==values.length){

@@ -1,7 +1,7 @@
 package com.devops.common;
 /**
  * 分页对象
- * @author fuxuemin
+ * @author guiguketang
  *
  */
 public class PageUtil {

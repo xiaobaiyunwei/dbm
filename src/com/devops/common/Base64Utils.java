@@ -4,7 +4,7 @@ import sun.misc.BASE64Decoder;
 /**
  * 
  * nginx流媒体服务防盗工具类。
- * @author fuxuemin
+ * @author guiguketang
  *
  */
 public class Base64Utils {

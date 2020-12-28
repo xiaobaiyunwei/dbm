@@ -84,7 +84,7 @@
 					</div>
 					<!-- IP分组Start -->
 					<div class="layui-col-md6">
-						<div class="layui-card">
+						<div class="layui-card" >
 							<div class="layui-card-header">IP分组结果</div>
 							<div class="layui-card-body layui-text" id="ip_result" ></div>
 						</div>
@@ -93,7 +93,7 @@
 				</div>
 			</div>
 			<div class="layui-col-md4">
-				<div class="layui-card">
+				<div class="layui-card" style="width: 362px;">
 					<div class="layui-card-header">命令分组结果</div>
 					<div class="layui-card-body layui-text" id="cmd_result"></div>
 				</div>

@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 /**
  * 框架实例domain对象;
- * @author fuxuemin
+ * @author guiguketang
  *
  */
 public class RedisData{

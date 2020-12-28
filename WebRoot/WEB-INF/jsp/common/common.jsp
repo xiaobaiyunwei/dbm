@@ -13,13 +13,7 @@
 <%--引用css文件，通过修改value为/css_min 切换成部署路径 --%>
 <c:set var="_cssURL" value="/css"></c:set>
 
-<%-- 单点服务器--对公路径 --%>
-<c:set var="_SSOServiceURL" value="http://portal.cdeledu.com/auth"></c:set>
-<c:set var="_SSOServiceURLs" value="https://portal.cdeledu.com/auth"></c:set>
-<%-- 单点服务器--对私路径 --%>
-<c:set var="_SSOPrivateService" value="http://portal.cdeledu.com/api"></c:set>
-<%-- 单点服务器--获取密码路径 --%>
-<c:set var="_SSOPrivatePasswordService" value="http://portal.cdeledu.com/lib/ucGetInfo.php"></c:set>
+
 <%-- 单点服务器--对私密钥 --%>
 <c:set var="_SSOPrivateKey" value="fJ3UjIFyTu"></c:set>
 

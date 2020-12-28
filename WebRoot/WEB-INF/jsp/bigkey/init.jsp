@@ -85,15 +85,6 @@
 	<script src="${_currConText}/js/dbm/dataope.js" type="text/javascript"></script>
 	<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 	<script>
-		// form.verify({
-		// 	keylength: function(value, item){ //value：表单的值、item：表单的DOM对象
-		// 		if(value!=""){  //值不是空的时候再去走验证
-		// 			if(value<100){
-		// 				return '数字不能小于100';
-		// 			}
-		// 		}
-		// 	}
-		// });
 		layui.use(
 					[ 'form', 'layedit', 'laydate' ],
 					function() {
@@ -126,7 +117,7 @@
 			var fields = [ "ip", "linenum", "port" ];//参数;
 			var values = [ ip, linenum, port ]; //参数对应的值;
 			var url = "${_currConText}/bigkey/postdata.shtm"; //方法要执行的url路径;
-			var data_val = postData(url, fields, values, 'ip_result');
+			//var data_val = postData(url, fields, values, 'ip_result');
 		}
 	</script>
 </body>

@@ -2,7 +2,7 @@ import sys
 import redis
 def check_big_key(r, k):
    bigKey = False
-   length = 0 
+   length = 0
    try:
      type = r.type(k)
      stype = bytes.decode(type)
@@ -19,7 +19,9 @@ def check_big_key(r, k):
        length = r.zcard(k)
    except:
      return
-   if length > 1024: #key size
+   #if length > 1024: #key size
+   key_length = int(sys.argv[4]);
+   if length > key_length: #key size
      bigKey = True
    if bigKey :
      print (db,k,stype,length)
@@ -40,8 +42,8 @@ def find_big_key_sharding(db_host, db_port, db_password, db_num, nodecount):
        if cursor == "0":
          break;
 if __name__ == '__main__':
-   if len(sys.argv) != 4:
-      print ('Usage: python ', sys.argv[0], ' host port password ')
+   if len(sys.argv) != 5:
+      print ('Usage: python ', sys.argv[0], ' host port password length')
       exit(1)
    db_host = sys.argv[1]
    db_port = sys.argv[2]

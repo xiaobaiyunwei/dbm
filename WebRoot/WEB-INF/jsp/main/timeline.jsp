@@ -32,21 +32,28 @@
 							<li class="layui-timeline-item"><i class="layui-icon layui-timeline-axis"></i>
 								<div class="layui-timeline-content layui-text">
 									<div class="layui-timeline-title">
-										2020年12月15日，项目再次启动，并于12月23日完成Redis大Key实时分析功能（圣诞前夕）；
+										2020年12月25日，完成Redis大Key离线分析功能，生产环境发布上线（圣诞节）；
 									</div>
 								</div>
 							</li>
 							<li class="layui-timeline-item"><i class="layui-icon layui-timeline-axis"></i>
 								<div class="layui-timeline-content layui-text">
-									<div class="layui-timeline-title">2020年6月17日，生产环境发布上线（618活动前夕）；
-										由于做数据同步项目，此项目搁置；
+									<div class="layui-timeline-title">
+										2020年12月15日，项目再次启动，并于12月23日完成Redis大Key实时分析功能；
+									</div>
+								</div>
+							</li>
+							<li class="layui-timeline-item"><i class="layui-icon layui-timeline-axis"></i>
+								<div class="layui-timeline-content layui-text">
+									<div class="layui-timeline-title">2020年06月17日，生产环境发布上线（618活动前夕）；
+										转做其他项目，此项目搁置；
 									</div>
 								</div>
 							</li>
 						
 							<li class="layui-timeline-item"><i class="layui-icon layui-timeline-axis"></i>
 								<div class="layui-timeline-content layui-text">
-									<div class="layui-timeline-title">2020年5月29日，增加redis维护版块；
+									<div class="layui-timeline-title">2020年05月29日，增加redis维护版块；
 									<a lay-href="set/init.shtm">查看redis维护</a>
 									</div>
 								</div>
@@ -54,14 +61,14 @@
 						
 							<li class="layui-timeline-item"><i class="layui-icon layui-timeline-axis"></i>
 								<div class="layui-timeline-content layui-text">
-									<div class="layui-timeline-title">2020年5月27日，增加mysql下CRUD开发，增加前端UI框架JBOX；
+									<div class="layui-timeline-title">2020年05月27日，增加mysql下CRUD开发，增加前端UI框架JBOX；
 									<a lay-href="demo/mysql/init.shtm">查看CRUD demo</a>
 									</div>
 								</div></li>
 				
 							<li class="layui-timeline-item"><i class="layui-icon layui-timeline-axis"></i>
 								<div class="layui-timeline-content layui-text">
-									<div class="layui-timeline-title">2020年5月26日，完成Redis热Key分析模块功能，达到预发布状态；
+									<div class="layui-timeline-title">2020年05月26日，完成Redis热Key分析模块功能，达到预发布状态；
 									<a lay-href="redis/init.shtm">Redis热Key分析</a>
 									</div>
 								</div></li>

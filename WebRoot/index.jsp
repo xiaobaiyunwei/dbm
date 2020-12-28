@@ -51,14 +51,17 @@
             <li data-name="home" class="layui-nav-item layui-nav-itemed">
               <a href="javascript:;" lay-tips="主页" lay-direction="2">
                 <i class="layui-icon layui-icon-home"></i>
-                <cite>主页</cite>
+                <cite>RedisKey值分析</cite>
               </a>
               <dl class="layui-nav-child">
                 <dd data-name="console" class="layui-this">
-                  <a lay-href="redis/init.shtm">Redis热Key</a>
+                  <a lay-href="redis/init.shtm">热Key分析</a>
                 </dd>
                 <dd data-name="console">
-                  <a lay-href="bigkey/init.shtm">Redis大Key</a>
+                  <a lay-href="offbigkey/init.shtm">离线大Key</a>
+                </dd>
+                <dd data-name="console">
+                  <a lay-href="bigkey/init.shtm">实时大Key</a>
                 </dd>
                 <dd data-name="console">
                   <a lay-href="main/timeline.shtm">控制台</a>
