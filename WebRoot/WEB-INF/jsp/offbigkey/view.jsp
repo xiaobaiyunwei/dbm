@@ -52,8 +52,11 @@
             }
             // 加载到web页面
             mtr.appendChild(frag);
-
+        },
+        error: function(result){
+            $("#ut").html("<font color=red>没有找到您要查看的结果！</font>");
         }
+
     });
 
 </script>
