@@ -117,7 +117,7 @@
 			var fields = [ "ip", "linenum", "port" ];//参数;
 			var values = [ ip, linenum, port ]; //参数对应的值;
 			var url = "${_currConText}/bigkey/postdata.shtm"; //方法要执行的url路径;
-			//var data_val = postData(url, fields, values, 'ip_result');
+			var data_val = postData(url, fields, values, 'ip_result');
 		}
 	</script>
 </body>
