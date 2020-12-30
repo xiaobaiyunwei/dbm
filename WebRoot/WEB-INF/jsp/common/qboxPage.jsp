@@ -23,7 +23,7 @@
 <!--头部开始-->
 <script language="javascript" src="${_webSite}${_pubConText}${_jsURL}/global.js"></script> 
 <c:import url="${_webSite}${_pubConText}/common/headHtml.shtm" charEncoding="UTF-8"/>
-<script>CDEL.Global.writeLoginInfo();</script>
+<script>AAEL.Global.writeLoginInfo();</script>
 <!--头部结束-->
 <div class="fbox_shadow" style="display: block;z-index: 1;" >
 	<div class="fbox" >

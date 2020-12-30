@@ -7,3 +7,10 @@ step1:沙盒安装python
 # virtualenv --python=/usr/local/python3/bin/python3 vpython3
 step2:安装redis模块
 pip install redis
+
+
+【目录说明】
+1、cmd目录：redis热key分析脚本
+2、python目录：redis大key分析主程序
+3、shell目录：redis大key分析脚本
+4、sql目录：项目sql初始化脚本文件

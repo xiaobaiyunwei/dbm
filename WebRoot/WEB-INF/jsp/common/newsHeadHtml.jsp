@@ -2,9 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ taglib tagdir="/WEB-INF/tags/util" prefix="util" %>	
 <%@ include file="/WEB-INF/jsp/common/common.jsp"%>
-<script type="text/javascript" src="${_projectContext}${_jsURL}/cdel/jquery.cookie.js"></script>
+<script type="text/javascript" src="${_projectContext}${_jsURL}/ggkt/jquery.cookie.js"></script>
 <link type="text/css" href="${_projectContext}${_cssURL}/jquery.autocomplete.css" rel="stylesheet" />
-<script type="text/javascript" src="${_projectContext}${_jsURL}/cdel/cookiemng.js"></script>
+<script type="text/javascript" src="${_projectContext}${_jsURL}/ggkt/cookiemng.js"></script>
 <%@ taglib tagdir="/WEB-INF/tags/login" prefix="login" %>
 <script type="text/javascript">
 // var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
@@ -27,7 +27,7 @@ function loadScript(){
          <div class="title-left"><span id="login-info" class="login-info"></span> </div>
         <div class="title-right">
 <%--             <div class="title-right-01">
-                <span OnMouseOver="CDEL.Global.player('hany1');" onMouseOut="CDEL.Global.clocer('hany1');" style=" cursor:pointer; padding:6px 25px 6px 0;">全部课程分类</span>
+                <span OnMouseOver=".Global.player('hany1');" onMouseOut=".Global.clocer('hany1');" style=" cursor:pointer; padding:6px 25px 6px 0;">全部课程分类</span>
                 <div class="xhdivbox">
                 <div id="hany1" class="xhmore" OnMouseOver="CDEL.Global.player('hany1');" onMouseOut="CDEL.Global.clocer('hany1');">
                     <div class="xhmore-top">

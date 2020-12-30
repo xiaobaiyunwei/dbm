@@ -12,7 +12,7 @@
 <property name="project" value="${workspaces.dir}/dbm"/>
 <!-- ========== tomcat config ========== -->
 <property name="user" value="root"/>
-<property name="passwd" value="cdeltech"/>
+<property name="passwd" value="****tech"/>
 <property name="host" value="192.168.190.3"/>
 <property name="tomcatDir" value="/usr/local/g12a/advc-qz-tomcat"/>
 <property name="baseDir" value="${tomcatDir}/webapps/pub"/>
@@ -21,7 +21,7 @@
 <property name="db.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
 <property name="db.url" value="jdbc:sqlserver://192.168.181.6:1433;DatabaseName=test"/>
 <property name="db.user" value="sa"/>
-<property name="db.passwd" value="cailiqiang"/>
+<property name="db.passwd" value="*****qiang"/>
     <!-- #### You can modify here #### -->
 <property name="project.package" value="com.devops.${module}"/>
 <property name="db.table" value="OP_FEE_BALANCEBILL"/>

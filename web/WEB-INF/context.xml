@@ -11,7 +11,7 @@
             maxActive="15"
             maxWait="5000"
             username="root"
-            password="cdel9999"
+            password="******"
             type="javax.sql.DataSource"
     />
 </Context>

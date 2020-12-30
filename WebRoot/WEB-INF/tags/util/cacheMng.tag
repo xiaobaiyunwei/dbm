@@ -1,6 +1,6 @@
 
 <%@tag import="java.rmi.Naming"%>
-<%@tag import="com.cdeledu.rad3.rmi.Cache"%>
+<%@tag import="com.****edu.rad3.rmi.Cache"%>
 
 <%@ attribute
 	name="var"
