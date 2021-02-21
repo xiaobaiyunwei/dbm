@@ -7,6 +7,8 @@
 
 4、实时分析实现原理
 以ip、端口号作为转入参数，通过redis-cli命令monitor输出日志进行分析
-/src/redis-cli -h $1 -p $2 monitor 
-5、离线分析实现原理
-分析db文件
+/src/redis-cli -h $1 -p $2 monitor   
+5、离线分析实现原理  
+通过redis-rdb-tools分析工具，使用rdb命令
+ rdb -c memory ./dump.rdb
+分析redis的持久化rdb文件
